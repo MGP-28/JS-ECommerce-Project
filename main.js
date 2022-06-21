@@ -15,4 +15,11 @@ import './src/input.css'
 
 getProducts();
 
-
+/*const app = document.querySelector('#app')
+const children = [...app.children]
+console.log(children)
+children.forEach(element => {
+  (element.id == 'about') 
+    ? element.classList.remove('hidden')
+    : element.classList.add('hidden')
+});*/

@@ -11,7 +11,6 @@ async function getProducts() {
     })
       .then(res=>res.json())
       .then(json=>{
-          console.log(json); 
           return json;
       })
       
