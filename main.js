@@ -1,4 +1,5 @@
-import { getAllProducts } from './src/services/getAllProducts.js'
+import { data } from 'autoprefixer';
+import { getProducts } from './src/services/getProducts.js'
 import './style.css'
 
 /*document.querySelector('#app').innerHTML += `
@@ -7,5 +8,6 @@ import './style.css'
   
 `*/
 
-getAllProducts()
+getProducts();
+
 
