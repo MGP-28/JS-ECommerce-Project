@@ -10,7 +10,11 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.3",
+    "tailwindcss": "^3.1.4",
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@fontsource/parisienne": "^4.5.7",
+    "@fontsource/roboto": "^4.5.7"
   }
 }

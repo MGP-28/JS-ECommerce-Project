@@ -1,6 +1,7 @@
-import { data } from 'autoprefixer';
 import { getProducts } from './src/services/getProducts.js'
-import './style.css'
+import "@fontsource/parisienne";
+import "@fontsource/roboto";
+import './src/input.css'
 
 /*document.querySelector('#app').innerHTML += `
   <h1 class="font-bold">Hello Vite!</h1>

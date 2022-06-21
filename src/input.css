@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+/*  */
+
+nav{
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#g4{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav{
+    grid-template-columns: 0 1fr 0;
+  }
+  #g4{
+    display: block;
+    background-color: yellow;
+    position: fixed;
+    transform: translate(50vw, 50vh);
+  }
+}
+
+#g1{
+  background-color: yellow;
+}
+
+#g2{
+  background-color: red;
+}
+
+#g3{
+  background-color: blue;
+}
