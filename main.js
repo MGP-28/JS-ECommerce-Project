@@ -7,11 +7,7 @@ import './src/input.css'
 
 import { load } from "./src/services/load.js";
 
-import { buildUI } from './src/views/buildUI.js';
-
 load()
-
-buildUI()
 
 /*const app = document.querySelector('#app')
 const children = [...app.children]

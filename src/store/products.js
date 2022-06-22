@@ -3,10 +3,9 @@ import { Product } from "../model/product";
 let products = []
 
 export function addProducts(arrProductsAPI){
-    arrProductsAPI.forEach(element => {
+    arrProductsAPI.forEach( element => {
         addProduct(element)
     });
-    console.log(products)
 }
 
 function addProduct(productAPI){
