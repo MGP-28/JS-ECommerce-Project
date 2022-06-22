@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/js/all.js"
 
 import './src/input.css'
 
-import { load } from "./src/services/load.js";
+import { load } from "./src/load.js";
 
 load()
 
