@@ -4,6 +4,7 @@ async function getProducts() {
   let data
 
   try {
+
     data = await fetch(url, {
       method: 'GET',
       headers: {
@@ -13,9 +14,11 @@ async function getProducts() {
     .then(res => res.json())
       
   } catch (error) {
+
     console.log(error, 'Error fetching data');
 
   } finally {
+    
     return data
 
   }
