@@ -1,3 +1,5 @@
+import { addProducts } from "../store/products";
+
 async function getProducts() {
 
   const url = 'https://fakestoreapi.com/products/category/jewelery';
@@ -11,7 +13,7 @@ async function getProducts() {
     })
       .then(res=>res.json())
       .then(json=>{
-          return json;
+        return json;
       })
       
   } catch (error) {

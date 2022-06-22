@@ -1,5 +1,3 @@
-import { getProducts } from './src/services/getProducts.js'
-
 import "@fontsource/parisienne";
 import "@fontsource/roboto";
 
@@ -7,7 +5,11 @@ import "@fortawesome/fontawesome-free/js/all.js"
 
 import './src/input.css'
 
+import { load } from "./src/services/load.js";
+
 import { buildUI } from './src/views/buildUI.js';
+
+load()
 
 buildUI()
 
