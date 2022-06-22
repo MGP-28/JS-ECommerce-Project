@@ -7,13 +7,9 @@ import "@fortawesome/fontawesome-free/js/all.js"
 
 import './src/input.css'
 
-/*document.querySelector('#app').innerHTML += `
-  <h1 class="font-bold">Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-  
-`*/
+import { buildUI } from './src/views/buildUI.js';
 
-getProducts();
+buildUI()
 
 /*const app = document.querySelector('#app')
 const children = [...app.children]
