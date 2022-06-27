@@ -1,10 +1,10 @@
-import { store } from "./store.js";
+import { shop } from "./shop.js";
 import { about } from "./about.js";
 import { contact } from "./contact.js";
 import { cart } from "./cart.js";
 
 export function buildUI(){
-    store()
+    shop()
     about()
     contact()
     cart()
