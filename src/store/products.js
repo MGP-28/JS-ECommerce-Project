@@ -32,10 +32,7 @@ let couponCode = getCoupon()
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
-    });
-
-    test()
-    
+    });    
 }
 
 function addProduct(productAPI){
