@@ -1,26 +1,18 @@
-export function setRating(id, value){
+export function setRating(id, rating){
 
     const products = JSON.parse(localStorage.getItem("products"))
 
-    let verif = false
+    let productExists = false
 
-    if(products.count >= 1){
+    const productLS = products.find(element => element.id == id)
 
-        for (let element in products) {
-            if(element.id == id) {
-                element.rating = rating
-                verif = true
-                break
-            }
-        };
-         
-    }
+    if(productLS) { productLS.rating = rating; productExists = true }
 
-    if(!verif){
+    if(!productExists){
         const product = {
             id: id,
-            quantity: quantity,
-            rating: false
+            quantity: 0,
+            rating: rating
         }
         products.push(product)
     }

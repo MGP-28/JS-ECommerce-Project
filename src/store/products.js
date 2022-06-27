@@ -8,25 +8,48 @@ let products = []
 
 let couponCode = getCoupon()
 
+//testing
+
+/*function test(){
+
+    const shop = document.querySelector('#shop')
+    const btn = document.createElement('button')
+    btn.textContent = 'CLICK ME'
+    btn.addEventListener('click', (e) => {
+        products.forEach(element => {
+            console.log(element)
+            //const product = products[0]
+            //removeUnitFromCart(product, true)
+            //addUnitToCart(product)
+            //updateStoredRating(product, 1)
+        });
+    })
+    shop.append(btn)
+}*/
+
 // add products
 
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
     });
+
+    test()
+    
 }
 
 function addProduct(productAPI){
-    const {id, title, description, price, imate, rating} = productAPI
+    const {id, title, description, price, image} = productAPI
+    const rating = Math.round(productAPI.rating.rate)
     const product = new Product(
-        id, title, description, price, imate, rating
+        id, title, description, price, image, rating
     )
     products.push(product)
 }
 
 // rating
 
-export function updateRating(product, rating){
+export function updateStoredRating(product, rating){
     product.updateRating(rating)
 }
 

@@ -4,9 +4,9 @@ export function setCartCounter(id, quantity){
 
     let verif = false
 
-    if(products.count >= 1){
+    if(products.length >= 1){
 
-        for (let element in products) {
+        for (let element of products) {
             if(element.id == id) {
                 element.quantity = quantity
                 verif = true

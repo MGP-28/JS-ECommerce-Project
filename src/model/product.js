@@ -11,12 +11,12 @@ export class Product{
         this.price = price
         this.image = image
         this.rating = this.getStoredRating(rating)
-        this.quantity = this.getStoredCartCounter();
+        this.quantity = this.getStoredCartCounter()
     }
 
     deleteFromCart(){
         this.quantity = 0
-        setCartCounter(this.id, 0)
+        setCartCounter(this.id, this.quantity)
     }
 
     addUnitToCart(){
@@ -27,21 +27,22 @@ export class Product{
     removeUnitFromCart(){
         if(this.quantity > 0) this.quantity -= 1
         setCartCounter(this.id, this.quantity)
+        
     }
 
     getStoredCartCounter(){
-        const cartConterLocal = getCartCount()
-        this.quantity = (cartConterLocal) ? cartConterLocal : 0
+        const cartCounterLocal = getCartCount(this.id)
+        return (cartCounterLocal) ? cartCounterLocal : 0
     }
 
     updateRating(rating){
         this.rating = rating
-        setRating(rating)
+        setRating(this.id, rating)
     }
 
     getStoredRating(rating){
-        const ratingStored = getRating()
-        this.rating = (ratingStored) ? ratingStored : rating
+        const ratingStored = getRating(this.id)
+        return (ratingStored) ? ratingStored : rating
     }
 
 }
