@@ -32,8 +32,8 @@ let couponCode = getCoupon()
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
+        console.log(element.image)
     });    
-    console.log(products)
 }
 
 function addProduct(productAPI){

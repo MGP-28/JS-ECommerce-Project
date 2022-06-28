@@ -61,20 +61,18 @@
       </ul>
     </section>
     <div id="app">
-      <div id="shop" class="hidden"></div> <!-- TIRAR ISTO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+      <div id="shop" class="hidden"></div> <!-- TIRAR HIDDEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
       <div id="about">
-        <div class="flex flex-col md:flex-row">
-          <section id="about-gallery" class="w-3/4 p-20 md:bg-blue-700">
-            <div class="gallery-image-area-a bg-red-100">teste</div>
-            <div class="gallery-image-area-b bg-red-500">teste</div>
-            <div class="gallery-image-area-c bg-red-800">teste</div>
-            <div class="gallery-image-area-d bg-blue-300">teste</div>
-            <div class="gallery-image-area-e bg-blue-700">teste</div>
-            <div class="gallery-image-area-f bg-green-200">teste</div>
-            <div class="gallery-image-area-g bg-green-500">teste</div>
-            <div class="gallery-image-area-h bg-purple-500">teste</div>
+        <div class="flex flex-col justify-center xl:flex-row">
+          <section id="about-gallery" class="w-full xl:w-2/3 bg-blue-700 flex justify-center">
+            <div id="about-gallery-grid" class="w-full px-10 md:px-0 py-20">
+              <div class="gallery-image-area-a"></div>
+              <div class="gallery-image-area-b"></div>
+              <div class="gallery-image-area-c"></div>
+              <div class="gallery-image-area-d"></div>
+            </div>
           </section>
-          <aside id="about-team" class="bg-fuchsia-500 w-1/4 h-20">
+          <aside id="about-team" class="bg-fuchsia-500 w-full xl:w-1/3 h-20">
             Aside
           </aside>
         </div>

@@ -68,6 +68,7 @@ footer{
 
 @media screen and (max-width: 767px) {
   footer{
+    position: relative;
     height: 100px;
   }
   nav{
@@ -77,64 +78,57 @@ footer{
 
 /* About */
 
-#about-gallery{
-  display: grid;
-  grid-template-columns: 150px;
-  grid-template-rows: repeat(8, 150px);
+#about-gallery-grid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .gallery-image-area-a{
-  background-image: url();
+  background-image: url(https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg);
   background-size: 100% 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.92;
 }
 
 .gallery-image-area-b{
-  background-image: url();
+  background-image: url(https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg);
   background-size: 100% 100%;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 0.57;
 }
 
 .gallery-image-area-c{
-  background-image: url();
+  background-image: url(https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg);
   background-size: 100% 100%;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 0.57;
 }
 
 .gallery-image-area-d{
-  background-image: url();
+  background-image: url(https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg);
   background-size: 100% 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.73;
 }
 
-.gallery-image-area-e{
-  background-image: url();
-  background-size:100% 100%
-}
-
-.gallery-image-area-f{
-  background-image: url();
-  background-size: 100% 100%;
-}
-
-.gallery-image-area-g{
-  background-image: url();
-  background-size:100% 100%
-}
-
-.gallery-image-area-h{
-  background-image: url();
-  background-size: 100% 100%;
-}
-
-@media screen and (min-width: 768px) {
-  #about-gallery{
-    height: 100vh;
+@media screen and (min-width: 767px) {
+  #about-gallery-grid{
+    width: 804px;
+    height: 804px;
     display: grid;
-    gap: 20px;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas: 
-                  "a a b c"
-                  "a a b d"
-                  "e f f g"
-                  "e f f h";
+                  "a a b"
+                  "a a b"
+                  "c d d"
+                  "c d d";
   }
   .gallery-image-area-a{
     grid-area: a;
@@ -150,21 +144,5 @@ footer{
   
   .gallery-image-area-d{
     grid-area: d;
-  }
-  
-  .gallery-image-area-e{
-    grid-area: e;
-  }
-  
-  .gallery-image-area-f{
-    grid-area: f;
-  }
-  
-  .gallery-image-area-g{
-    grid-area: g;
-  }
-  
-  .gallery-image-area-h{
-    grid-area: h;
   }
 }
