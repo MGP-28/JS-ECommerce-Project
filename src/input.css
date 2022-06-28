@@ -35,6 +35,7 @@ nav{
   padding: 20px 80px;
   background-color: var(--color-tan);
   box-shadow: 0 5px 15px rgba(0, 0, 0,0.06);
+  height: 75px;
 }
 
 li{
@@ -50,18 +51,120 @@ li{
   transition: 0.5s;
 }
 
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 #nav-links-mobile{
   top: 80%; 
   right: 50%;
   transform: translate(50%,-50%);
 }
 
+/* Footer */
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
 @media screen and (max-width: 767px) {
+  footer{
+    height: 100px;
+  }
+  nav{
+    padding: 20px 0;
+  }
+}
+
+/* About */
+
+#about-gallery{
+  display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: repeat(8, 150px);
+}
+
+.gallery-image-area-a{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+.gallery-image-area-b{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+.gallery-image-area-c{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+.gallery-image-area-d{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+.gallery-image-area-e{
+  background-image: url();
+  background-size:100% 100%
+}
+
+.gallery-image-area-f{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+.gallery-image-area-g{
+  background-image: url();
+  background-size:100% 100%
+}
+
+.gallery-image-area-h{
+  background-image: url();
+  background-size: 100% 100%;
+}
+
+@media screen and (min-width: 768px) {
+  #about-gallery{
+    height: 100vh;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+                  "a a b c"
+                  "a a b d"
+                  "e f f g"
+                  "e f f h";
+  }
+  .gallery-image-area-a{
+    grid-area: a;
+  }
   
+  .gallery-image-area-b{
+    grid-area: b;
+  }
+  
+  .gallery-image-area-c{
+    grid-area: c;
+  }
+  
+  .gallery-image-area-d{
+    grid-area: d;
+  }
+  
+  .gallery-image-area-e{
+    grid-area: e;
+  }
+  
+  .gallery-image-area-f{
+    grid-area: f;
+  }
+  
+  .gallery-image-area-g{
+    grid-area: g;
+  }
+  
+  .gallery-image-area-h{
+    grid-area: h;
+  }
 }

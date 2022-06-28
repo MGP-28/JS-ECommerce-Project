@@ -1,6 +1,7 @@
 import { getProducts } from './services/getProducts.js'
 import { reserveLocalStorage } from './services/json/reserveLocal.js'
 import { addProducts } from './store/products.js'
+import { buildUI } from './views/buildUI.js'
 import { loadEvents } from './views/events/loadEvents.js'
 
 export async function load(){
@@ -8,6 +9,8 @@ export async function load(){
     reserveLocalStorage()
     //UI events
     loadEvents()
+    //build UI
+    buildUI()
     //get products from API
     const productsAPI = await getProducts()
     //insert them into store array
