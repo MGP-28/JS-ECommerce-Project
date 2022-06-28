@@ -10,35 +10,58 @@
   --color-beige: #FFEDD5;
 }
 
-#app {
+body {
+  margin: 0px;
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: black;
 }
 
-/*  */
+/* Global */
+
+.text-color-custom-beje{
+  color: var(--color-beige);
+}
+
+.font-parisienne{
+  font-family: Parisienne, cursive;
+}
+
+/* Navbar */
 
 nav{
-  width: 100vw;
-  display: grid;
-  grid-template-rows: 1;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: var(--color-tan);
+  box-shadow: 0 5px 15px rgba(0, 0, 0,0.06);
 }
 
-#mobileNav{
-  display: none;
+li{
+  list-style: none;
 }
 
-@media screen and (max-width: 768px) {
-  nav{
-    grid-template-columns: 0 1fr 0;
-  }
-  #mobileNav{
-    display: block;
-    background-color: yellow;
-    position: fixed;
-    transform: translate(50vw, 50vh);
-  }
+.link-hover-anim{
+  transition: 0.5s;
+}
+
+.link-hover-anim:hover{
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#nav-links-mobile{
+  top: 80%; 
+  right: 50%;
+  transform: translate(50%,-50%);
+}
+
+@media screen and (max-width: 767px) {
+  
 }

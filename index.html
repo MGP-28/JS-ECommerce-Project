@@ -8,19 +8,81 @@
     <title>DekiDeki</title>
   </head>
   <body>
-    <nav>
-      
+    <nav class="nav-style">
+      <!-- Nav links -->
+      <ul class="hidden md:block md:absolute">
+        <li id="nav-links" class="flex flex-row gap-10 text-xl font-light h-full">
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-8 h-8 fa-solid fa-cart-shopping text-color-custom-beje"></i>
+            <span class="hidden lg:block">Shop</span>
+          </a>
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-4 h-4 fa-solid fa-info border-2 border-orange-100 rounded-full p-1.5 text-color-custom-beje"></i>
+            <span class="hidden lg:block">About</span>
+          </a>
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-8 h-8 fa-brands fa-whatsapp text-color-custom-beje"></i>
+            <span class="hidden lg:block">Contact</span>
+          </a>
+        </li>
+      </ul>
+      <!-- Brand name -->
+      <div class="w-full font-parisienne text-5xl text-center md:text-right xl:text-center">
+        <a href="#">DekiDeki Jewelry</a>
+      </div>
+
+      <!-- Social -->
+      <div class="hidden xl:block xl:absolute right-20">
+        <div class="flex justify-end items-center gap-5">
+          <a href="#"><i class="link-hover-anim fa-brands fa-facebook w-8 h-8 text-color-custom-beje"></i></a>
+          <a href="#"><i class="link-hover-anim fa-brands fa-twitter-square w-8 h-8 text-color-custom-beje"></i></a>
+          <a href="#"><i class="link-hover-anim fa-solid fa-square-rss w-8 h-8 text-color-custom-beje"></i></a>
+        </div>
+      </div>
+
     </nav>
+    <section id="nav-links-mobile" class="nav-style fixed md:hidden">
+      <!-- Mobile nav links -->
+      <ul class="rounded-lg bg-orange-300 px-3 py-1.5">
+        <li class="flex flex-row gap-10 text-xl font-light h-full">
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-8 h-8 fa-solid fa-cart-shopping text-color-custom-beje"></i>
+            <span class="hidden lg:block">Shop</span>
+          </a>
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-4 h-4 fa-solid fa-info border-2 border-orange-100 rounded-full p-1.5 text-color-custom-beje"></i>
+            <span class="hidden lg:block">About</span>
+          </a>
+          <a href="#" class="link-hover-anim flex gap-2 items-center">
+            <i class="w-8 h-8 fa-brands fa-whatsapp text-color-custom-beje"></i>
+            <span class="hidden lg:block">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </section>
     <div id="app">
       <div id="shop"></div>
       <div id="about" class="hidden"></div>
       <div id="contact" class="hidden"></div>
       <div id="cart" class="hidden"></div>
     </div>
-    <footer>
-
+    <footer class="p-4 shadow bg-orange-300 text-center flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:p-6">
+      <span class="text-sm sm:text-center">© 2022 DekiDeki™. All Rights Reserved.</span>
+      <ul class="grid grid-cols-2 text-sm gap-1 md:gap-5 md:flex md:flex-wrap md:items-center ">
+          <li>
+              <h1>João Pereira</h1>
+          </li>
+          <li>
+              <h1>Márcio Miguel</h1>
+          </li>
+          <li>
+              <h1>Pedro Teixeira</h1>
+          </li>
+          <li>
+              <h1>António Camarão</h1>
+          </li>
+      </ul>
     </footer>
-    <i class="w-40 h-40 fa-solid fa-arrows-to-eye"></i>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
