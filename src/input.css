@@ -27,6 +27,10 @@ body {
   font-family: Parisienne, cursive;
 }
 
+.font-size-40{
+  font-size: 40px;
+}
+
 /* Navbar */
 
 nav{
@@ -82,7 +86,6 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
 
 .gallery-image-area-a{
@@ -90,6 +93,7 @@ footer{
   background-size: 100% 100%;
   width: 100%;
   height: auto;
+  max-height: 370px;
   aspect-ratio: 1.92;
 }
 
@@ -98,6 +102,7 @@ footer{
   background-size: 100% 100%;
   width: 50%;
   height: auto;
+  max-height: 588px;
   aspect-ratio: 0.57;
 }
 
@@ -106,6 +111,7 @@ footer{
   background-size: 100% 100%;
   width: 50%;
   height: auto;
+  max-height: 588px;
   aspect-ratio: 0.57;
 }
 
@@ -114,21 +120,20 @@ footer{
   background-size: 100% 100%;
   width: 100%;
   height: auto;
-  aspect-ratio: 1.73;
+  max-height: 370px;
+  aspect-ratio: 1.92;
 }
 
 @media screen and (min-width: 767px) {
   #about-gallery-grid{
-    width: 804px;
-    height: 804px;
+    max-width: 1080px;
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: 370px 588px 370px;
     grid-template-areas: 
-                  "a a b"
-                  "a a b"
-                  "c d d"
-                  "c d d";
+                  "a a"
+                  "b c"
+                  "d d";
   }
   .gallery-image-area-a{
     grid-area: a;
@@ -136,13 +141,46 @@ footer{
   
   .gallery-image-area-b{
     grid-area: b;
+    width: 100%;
   }
   
   .gallery-image-area-c{
     grid-area: c;
+    width: 100%;
   }
   
   .gallery-image-area-d{
     grid-area: d;
   }
+}
+
+.divider{
+	position: relative;
+	height: 1px;
+}
+
+.div-transparent:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-dot:after{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -9px;
+	left: calc(50% - 9px);
+	width: 18px;
+	height: 18px;
+	background-color: var(--color-tan);
+	border: 1px solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 2px white,
+					    0 0 0 4px white;
 }
