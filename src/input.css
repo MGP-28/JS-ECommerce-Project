@@ -12,6 +12,7 @@
 
 body {
   margin: 0px;
+  background-color: var(--color-beige);
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
