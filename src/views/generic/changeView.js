@@ -1,9 +1,8 @@
 export function changeView(viewToShow){
 
-    const app = document.querySelector('#app')
-    const children = [...app.children]
+    const appViews = document.querySelectorAll('#app>div')
 
-    children.forEach(element => {
+    appViews.forEach(element => {
     (element.id == viewToShow) 
         ? element.classList.remove('hidden')
         : element.classList.add('hidden')

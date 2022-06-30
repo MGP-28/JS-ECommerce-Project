@@ -33,10 +33,7 @@ body {
 
 /* Navbar */
 
-nav{
-  display: flex;
-  align-items: center;
-  padding: 20px 80px;
+nav>section:first-child{
   background-color: var(--color-tan);
   box-shadow: 0 5px 15px rgba(0, 0, 0,0.06);
   height: 75px;
@@ -72,11 +69,7 @@ footer{
 
 @media screen and (max-width: 767px) {
   footer{
-    position: relative;
     height: 100px;
-  }
-  nav{
-    padding: 20px 0;
   }
 }
 
