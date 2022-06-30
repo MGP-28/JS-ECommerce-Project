@@ -69,7 +69,6 @@ nav{
 .shop-grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
   font-size: 30px;
   text-align: center;
   border-radius: 15px;
@@ -88,28 +87,28 @@ nav{
   "price addToCart";
 }
 
-.img {
+.cardImg {
   grid-area: img;
   
 }
 
-.name {
+.cardName {
   grid-area: name;
   font-family: 'parisienne';
   
 }
 
-.description {
+.cardDescription {
   grid-area: description;
   font-family: 'roboto';
 }
 
-.price {
+.cardPrice {
   grid-area: price;
   font-family: 'parisienne';
 }
 
-.addToCart {
+.cardAddToCart {
   grid-area: addToCart;
   background-color: var(--color-beige);
   font-family: 'parisienne';
@@ -152,3 +151,4 @@ nav{
 
 
 }
+
