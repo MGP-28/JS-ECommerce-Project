@@ -8,7 +8,30 @@
     <title>DekiDeki</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1></h1>
+      <div>
+        <section id="cart-item-list">
+          <div>
+            <div><img src="" alt=""></div>
+            <div><!--name & price-->
+              <h1></h1>
+              <h2></h2>
+            </div>
+            <div class="flex"><!--quantity selectors-->
+              <button class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+              <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
+              <button class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div><!--remove item-->
+              <button><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+        </section>
+        <section id="cart-coupon"></section>
+        <section id="cart-totals"></section>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

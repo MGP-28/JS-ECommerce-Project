@@ -1,7 +1,9 @@
 const cartView = document.getElementById("#cart") 
 
 export function cart(){
-    //build
+    document.querySelector('#cart').innerHTML += `
+        
+    `
 }
 
 function eventListeners(){
