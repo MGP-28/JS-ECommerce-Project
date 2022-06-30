@@ -137,20 +137,30 @@ footer{
   }
   .gallery-image-area-a{
     grid-area: a;
+    width: 100%;
+    height: auto;
+    max-height: auto;
   }
   
   .gallery-image-area-b{
     grid-area: b;
     width: 100%;
+    height: auto;
+    max-height: auto;
   }
   
   .gallery-image-area-c{
     grid-area: c;
     width: 100%;
+    height: auto;
+    max-height: auto;
   }
   
   .gallery-image-area-d{
     grid-area: d;
+    width: 100%;
+    height: auto;
+    max-height: auto;
   }
 }
 
@@ -183,4 +193,17 @@ footer{
 	border-radius: 50%;
 	box-shadow: inset 0 0 0 2px white,
 					    0 0 0 4px white;
+}
+
+#about-gallery-grid>div{
+  transition: 1s;
+}
+
+#about-gallery-grid>div:hover{
+  transform:scale(1.2);
+  transition: 1s;
+}
+
+.background-half{
+  background-color: rgba(128, 128, 128, 0.5)
 }

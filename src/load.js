@@ -7,10 +7,10 @@ import { loadEvents } from './views/events/loadEvents.js'
 export async function load(){
     //local storage check
     reserveLocalStorage()
-    //UI events
-    loadEvents()
     //build UI
     buildUI()
+    //UI events
+    loadEvents()
     //get products from API
     const productsAPI = await getProducts()
     //insert them into store array
