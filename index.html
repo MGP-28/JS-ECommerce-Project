@@ -61,9 +61,29 @@
       </ul>
     </section>
     <div id="app">
-      <div id="shop"></div>
+      <div id="shop" class="hidden"></div>
       <div id="about" class="hidden"></div>
-      <div id="contact" class="hidden"></div>
+      <div id="contact">
+        <div class="contact-introduction">
+          <span>Let your essence, flow and lifestyle overflow</span>
+          <p>Be wise</p>
+        </div>
+        <div class="contact-form">
+          <h1 class="contact-us">
+            <span>Contact us</span>
+          </h1>
+          <div class="contact-form-data">
+            <input type="contact-name" id="name" placeholder="First Name" required>
+            <input type="contact-text" id="company" placeholder="Company" required>
+            <input type="contact-email" id="email" placeholder="Email" required>
+            <input type="contact-text" id="message" placeholder="Write your message here..." required>
+            <button type="contact-submit" id="submit">Send</button>
+            <div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.0634987829135!2d-8.688463584741491!3d41.2203866792799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2468ec3655d101%3A0x12cab54b20119109!2sATEC%20-%20Academia%20de%20Forma%C3%A7%C3%A3o%20(Matosinhos)!5e0!3m2!1spt-PT!2spt!4v1656437625120!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="cart" class="hidden"></div>
     </div>
     <footer class="p-4 shadow bg-orange-300 text-center flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:p-6">

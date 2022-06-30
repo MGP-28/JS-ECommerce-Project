@@ -65,3 +65,90 @@ footer{
 @media screen and (max-width: 767px) {
   
 }
+
+.introduction {
+  display: grid;
+  justify-content: center;
+  padding: 200px;
+  font-size:30px;
+  background-image: url("/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
+  background-size: 100%;
+}
+
+.contact-form{
+  color:#1C1917;
+}
+
+.contact-us{
+  display: grid;
+  justify-content: center;
+  font-size:40px;
+  padding: 100px;
+}
+
+.contact-form-data{
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-name {
+  margin-left: 50px;
+  margin-right: 1200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  background-color:var(--color-beige);
+  color: var(--color-black);
+  border: solid;
+  font-size: 20px;
+}
+
+#contact-company{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 1200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  background-color:var(--color-beige);
+  color: var(--color-black);
+  border: solid;
+  font-size: 20px;
+}
+
+#contact-email{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 1200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  background-color:var(--color-beige);
+  color: var(--color-black);
+  border: solid;
+  font-size: 20px;
+}
+
+#contact-message{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 1200px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 100px;
+  background-color:var(--color-beige);
+  color: var(--color-black);
+  border: solid;
+  font-size: 20px;
+}
+
+#contact-submit{
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 1600px;
+  padding: 10px;
+  background-color:var(--color-beige);
+  color: var(--color-black);
+  border: solid;
+  font-size: 20px;
+}
