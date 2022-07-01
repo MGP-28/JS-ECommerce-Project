@@ -1,7 +1,5 @@
 import { renderCartList } from "../components/cart/items/cartItemList"
 
-const cartView = document.getElementById("#cart") 
-
 export function cart(){
     let cartPage = document.querySelector('#cart')
     cartPage.innerHTML = `
