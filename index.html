@@ -9,11 +9,31 @@
   </head>
   <body>
     <div id="app">
-        <div class="w-full flex justify-center">
+      <div class="w-full flex justify-center">
         <div class="flex flex-col justify-center w-3/4 my-20">
           <h1 class="font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
           <div class="w-full grid gap-10 grid-cols-2 cart-page-components-grid-cols">
             <ul id="cart-item-list" class="px-5 bg-white rounded-md h-min">
+              <li>
+                <div class="grid cart-item-row gap-4 items-center py-5">
+                  <div class="bg-green-700 w-24 h-24 overflow-hidden">
+                    <img src="" alt="">
+                  </div>
+                  <div class="flex flex-col gap-3 overflow-hidden"><!--name & price-->
+                    <h1>Backpack blue gimme food</h1>
+                    <h2 class="font-semibold">$29.99</h2>
+                  </div>
+                  <div class="flex"><!--quantity selectors-->
+                    <button class="hover:border-orange-300 hover:border-2 hover:shadow-md text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow w-10 h-10 flex justify-center items-center"><span>1</span></div>
+                    <button class="hover:border-orange-300 hover:border-2 hover:shadow-md text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <div><!--remove item-->
+                    <button class="hover:border-orange-300 hover:border-2 hover:shadow-md text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                  </div>
+                </div>
+                <div class="cart-item-divider w-full border-t"></div>
+              </li>
               <li>
                 <div class="grid cart-item-row gap-4 items-center py-5">
                   <div class="bg-green-700 w-24 h-24 overflow-hidden">

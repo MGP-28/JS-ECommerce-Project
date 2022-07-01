@@ -4,16 +4,19 @@ function render(products){
     const cartListEl = document.createElement('ul')
     cartListEl.classList.add('px-5', 'bg-white', 'rounded-md', 'h-min')
 
-    products.forEach(element => {
+    /*products.forEach(element => {
         cartListEl.append(renderCartItem(element))
-    });
+    });*/
+
+    //placeholder
+    for (let index = 0; index < 6; index++) {
+        cartListEl.append(renderCartItem()) 
+    }
 
     //events
     
 
-    deleteContainerEl.append(deleteEl)
-
-    return deleteContainerEl
+    return cartListEl
 }
 
 export {render as renderCartList}

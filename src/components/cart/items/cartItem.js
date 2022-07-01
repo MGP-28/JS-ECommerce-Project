@@ -3,25 +3,29 @@ import { renderCartItemQuantity } from "./quantity"
 
 function render(product){
     const cartItemEl = document.createElement('li')
-    
+
     const cartItemGridEl = document.createElement('div')
     cartItemGridEl.classList.add('grid', 'cart-item-row', 'gap-4', 'items-center', 'py-5')
     cartItemEl.append(cartItemGridEl)
 
-    cartItemEl.append(renderImg())
+    cartItemGridEl.append(renderImg())
 
-    cartItemEl.append(renderText())
+    cartItemGridEl.append(renderText())
     
-    cartItemEl.append(renderCartItemQuantity())
+    cartItemGridEl.append(renderCartItemQuantity())
 
-    cartItemEl.append(renderItemCartDelete())
+    cartItemGridEl.append(renderItemCartDelete())
+
+    const dividerEl = document.createElement('div')
+    dividerEl.classList.add('cart-item-divider', 'w-full', 'border-t')
+    cartItemEl.append(dividerEl)
 
     //events
     
 
-    deleteContainerEl.append(deleteEl)
+    
 
-    return deleteContainerEl
+    return cartItemEl
 }
 
 function renderImg(imgURL){
@@ -37,13 +41,14 @@ function renderImg(imgURL){
 
 function renderText(name, price){
     const containerEl = document.createElement('div')
-    containerEl.classList.add('bg-green-700', 'w-24', 'h-24', 'overflow-hidden')
+    containerEl.classList.add('flex', 'flex-col', 'gap-3', 'overflow-hidden')
 
     const nameEl = document.createElement('h1')
     //text content
     containerEl.append(nameEl)
 
     const priceEl = document.createElement('h2')
+    priceEl.classList.add('font-semibold')
     //text content
     containerEl.append(priceEl)
 

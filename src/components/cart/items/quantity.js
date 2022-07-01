@@ -2,7 +2,7 @@ import { renderGenericCartButton } from "./generic/cartButton"
 
 function render(product){
     const cartItemQuantityEl = document.createElement('div')
-    btnEl.classList.add('flex')
+    cartItemQuantityEl.classList.add('flex')
 
     cartItemQuantityEl.append(minusBtn())
     cartItemQuantityEl.append(quantityDisplay())
