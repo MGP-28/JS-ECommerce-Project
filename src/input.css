@@ -40,6 +40,10 @@ body {
   background-color: var(--color-beige);
 }
 
+button:hover{
+  
+}
+
 /* Navbar */
 
 nav>section:first-child{
