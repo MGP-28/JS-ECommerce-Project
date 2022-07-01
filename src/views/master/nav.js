@@ -1,5 +1,5 @@
 function render(){
-    document.querySelector('#app').innerHTML += `
+    document.querySelector('#app').innerHTML = `
     <nav>
       <section class="flex items-center py-5 px-0 md:px-20">
         <!-- Nav links -->

@@ -119,6 +119,7 @@ footer{
 .card-rating {
   top: calc(100% - 60px);
   left: 20px;
+  
 }
 
 .cardName {
