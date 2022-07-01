@@ -51,7 +51,7 @@ li{
 }
 
 footer{
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   width: 100%;
 }
@@ -66,17 +66,20 @@ footer{
   
 }
 
-.contact-introduction {
-  display: grid;
+/* .contact-introduction {
   justify-content: center;
   padding: 200px;
   font-size:30px;
   background-image: url("/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 
+
 .contact-form{
-  color:#1C1917;
+  background-image: url(/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .contact-us{
@@ -87,7 +90,7 @@ footer{
 }
 
 .contact-form-data{
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 
@@ -152,3 +155,76 @@ footer{
   border: solid;
   font-size: 20px;
 }
+
+#contact-maps{
+  padding: 50px;
+} */
+
+
+#contact-introduction{
+  position: relative;
+  text-align: center;
+  height: 450px;
+  background-image: url("/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  filter: hue-rotate(220deg) brightness(20%);
+}
+
+#introduction-span{
+  position: absolute;
+  bottom: 27%;
+  left: 180px;
+  font-size:20px;
+  color: var(--color-tan);
+  filter: hue-rotate(-220deg) brightness(100%);
+}
+
+#introduction-p{
+  font-size:30px;
+  bottom: 15%;
+  left: 330px;
+  position: absolute;
+  color: var(--color-orange);
+  filter: hue-rotate(-220deg) brightness(100%);
+}
+
+#contact-form{
+  background-image: url(/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
+  background-size: 100%;
+}
+
+.contact-form-input{
+  
+}
+
+#contact-name{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin: 20px;
+}
+
+#contact-company{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin: 20px;
+}
+
+#contact-email{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin: 20px;
+}
+
+#contact-message{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin: 20px;
+}
+
+#contact-submit{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin: 20px;
+}
+
