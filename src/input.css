@@ -45,7 +45,15 @@ nav{
   background-color: var(--color-beige);
 }
 
-.cardAddToCartBtn {
+#shop-goToCart {
+  width: 190px;
+  text-align: left;
+  padding-left: 10px;
+  height: 35px;
+  font-family: 'parisienne';
+}
+
+/* .cardAddToCartBtn {
 
     background-color: var(--color-beige);
     padding: 15px 32px;
@@ -57,13 +65,13 @@ nav{
 
 
 
-}
+} */
 
 .shop-grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto;
   padding: 10px;
-  gap: 10px;
+  gap: 40px;
 }
 
 .shop-grid-item {
@@ -71,7 +79,7 @@ nav{
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: 30px;
   text-align: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 .product-card {
   
