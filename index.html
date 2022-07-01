@@ -9,27 +9,66 @@
   </head>
   <body>
     <div id="app">
-      <h1></h1>
-      <div>
-        <section id="cart-item-list">
-          <div class="grid cart-item-row">
-            <div><img src="" alt=""></div>
-            <div><!--name & price-->
-              <h1></h1>
-              <h2></h2>
-            </div>
-            <div class="flex"><!--quantity selectors-->
-              <button class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
-              <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
-              <button class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
-            </div>
-            <div><!--remove item-->
-              <button class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
+      <div class="w-full flex justify-center">
+        <div class="flex flex-col justify-center w-3/4">
+          <h1 class="mt-20 font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
+          <div class="w-full grid gap-10 grid-cols-2">
+            <ul id="cart-item-list" class="px-5 bg-white rounded-md h-min">
+              <li>
+                <div class="grid cart-item-row gap-4 items-center py-5">
+                  <div class="bg-green-700 w-24 h-24 overflow-hidden">
+                    <img src="" alt="">
+                  </div>
+                  <div><!--name & price-->
+                    <h1>Backpack blue gimme food</h1>
+                    <h2>$29.99</h2>
+                  </div>
+                  <div class="flex"><!--quantity selectors-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <div><!--remove item-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                  </div>
+                </div>
+                <div class="cart-item-divider w-full border-t">
+  
+                </div>
+              </li>
+              <li>
+                <div class="grid cart-item-row gap-4 items-center py-5">
+                  <div class="bg-green-700 w-24 h-24 overflow-hidden">
+                    <img src="" alt="">
+                  </div>
+                  <div><!--name & price-->
+                    <h1>Backpack blue gimme food</h1>
+                    <h2>$29.99</h2>
+                  </div>
+                  <div class="flex"><!--quantity selectors-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <div><!--remove item-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                  </div>
+                </div>
+                <div class="cart-item-divider w-full border-t">
+  
+                </div>
+              </li>
+            </ul>
+            <aside class="flex flex-col gap-10">
+              <section id="cart-coupon" class="h-32 border border-red-500">
+    
+              </section>
+              <section id="cart-totals" class="h-64 border border-red-500">
+      
+              </section>
+            </aside>
           </div>
-        </section>
-        <section id="cart-coupon"></section>
-        <section id="cart-totals"></section>
+        </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>
