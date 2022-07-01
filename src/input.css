@@ -59,13 +59,6 @@ nav{
   width: 350px;
 }
 
-.shop-grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 40px;
-
-}
-
 .shop-grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 30px;
@@ -163,18 +156,6 @@ nav{
     transform: translate(50vw, 50vh);
   }
 
-
-  /* #region PageShopMobile */
-
-
-  .shop-grid-container{
-    display: grid;
-    grid-template-columns: auto;
-    padding: 10px;
-    gap: 10px;
-  }
-
-  /* #endregion PageShopMobile */
   
 
 
