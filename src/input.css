@@ -53,19 +53,19 @@ nav{
   font-family: 'parisienne';
 }
 
-/* .cardAddToCartBtn {
+.cardAddToCartBtn {
 
-    background-color: var(--color-beige);
+    /* background-color: var(--color-beige);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size:14px;
+    display: inline-block;  */
+    font-size:20px;
     font-family: 'parisienne';
 
 
 
-} */
+}
 
 .shop-grid-container{
   display: grid;
@@ -93,6 +93,7 @@ nav{
   "name name"
   "description description"
   "price addToCart";
+  
 }
 
 .cardImg {
@@ -114,12 +115,15 @@ nav{
 .cardPrice {
   grid-area: price;
   font-family: 'parisienne';
+  font-size: 20px;
 }
 
 .cardAddToCart {
   grid-area: addToCart;
   background-color: var(--color-beige);
   font-family: 'parisienne';
+  height: 50px;
+  
 }
 
 
