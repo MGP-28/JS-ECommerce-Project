@@ -32,6 +32,14 @@ body {
   font-size: 40px;
 }
 
+.background-half{
+  background-color: rgba(128, 128, 128, 0.5)
+}
+
+.background-beige{
+  background-color: var(--color-beige);
+}
+
 /* Navbar */
 
 nav>section:first-child{
@@ -198,10 +206,6 @@ footer{
   transition: 1s;
 }
 
-.background-half{
-  background-color: rgba(128, 128, 128, 0.5)
-}
-
 /* cart */
 
 .cart-item-row{
@@ -210,4 +214,8 @@ footer{
 
 #cart-item-list>li:last-child .cart-item-divider{
   display: none;
+}
+
+.cart-page-components-grid-cols{
+  grid-template-columns: auto 370px;
 }

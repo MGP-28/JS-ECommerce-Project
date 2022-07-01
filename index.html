@@ -9,10 +9,10 @@
   </head>
   <body>
     <div id="app">
-      <div class="w-full flex justify-center">
-        <div class="flex flex-col justify-center w-3/4">
-          <h1 class="mt-20 font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
-          <div class="w-full grid gap-10 grid-cols-2">
+        <div class="w-full flex justify-center">
+        <div class="flex flex-col justify-center w-3/4 my-20">
+          <h1 class="font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
+          <div class="w-full grid gap-10 grid-cols-2 cart-page-components-grid-cols">
             <ul id="cart-item-list" class="px-5 bg-white rounded-md h-min">
               <li>
                 <div class="grid cart-item-row gap-4 items-center py-5">
@@ -24,17 +24,15 @@
                     <h2>$29.99</h2>
                   </div>
                   <div class="flex"><!--quantity selectors-->
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
-                    <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow w-10 h-10"><span></span></div>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-plus"></i></button>
                   </div>
                   <div><!--remove item-->
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </div>
-                <div class="cart-item-divider w-full border-t">
-  
-                </div>
+                <div class="cart-item-divider w-full border-t"></div>
               </li>
               <li>
                 <div class="grid cart-item-row gap-4 items-center py-5">
@@ -46,25 +44,75 @@
                     <h2>$29.99</h2>
                   </div>
                   <div class="flex"><!--quantity selectors-->
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-minus"></i></button>
-                    <div class="border-2 border-gray-300 rounded shadow-lg w-10 h-10"><span></span></div>
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow w-10 h-10"><span></span></div>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-plus"></i></button>
                   </div>
                   <div><!--remove item-->
-                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow-lg w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </div>
-                <div class="cart-item-divider w-full border-t">
-  
+                <div class="cart-item-divider w-full border-t"></div>
+              </li>
+              <li>
+                <div class="grid cart-item-row gap-4 items-center py-5">
+                  <div class="bg-green-700 w-24 h-24 overflow-hidden">
+                    <img src="" alt="">
+                  </div>
+                  <div><!--name & price-->
+                    <h1>Backpack blue gimme food</h1>
+                    <h2>$29.99</h2>
+                  </div>
+                  <div class="flex"><!--quantity selectors-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-minus"></i></button>
+                    <div class="border-2 border-gray-300 rounded shadow w-10 h-10"><span></span></div>
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                  <div><!--remove item-->
+                    <button class="text-orange-500 border-2 border-gray-300 rounded shadow w-10 h-10"><i class="fa-solid fa-trash-can"></i></button>
+                  </div>
                 </div>
+                <div class="cart-item-divider w-full border-t"></div>
               </li>
             </ul>
-            <aside class="flex flex-col gap-10">
-              <section id="cart-coupon" class="h-32 border border-red-500">
-    
+            <aside class="flex flex-col gap-10 text-sm">
+              <section id="cart-coupon" class="h-32 bg-white rounded-md p-5 flex flex-col justify-between pb-8">
+                <h3>Have a coupon?</h3>
+                <form class="flex gap-5">
+                  <input type="text" placeholder="Text" class="px-2 text-sm outline outline-3 outline-gray-300 rounded-sm h-9 w-3/4">
+                  <button class="w-1/4 border border-black background-beige shadow font-parisienne hover:scale-105">Apply</button>
+                </form>
               </section>
-              <section id="cart-totals" class="h-64 border border-red-500">
-      
+              <section id="cart-totals" class="bg-white rounded-sm p-5 flex flex-col gap-3">
+                <div class="flex justify-between">
+                  <h3>Total Price:</h3>
+                  <h3>$69.97</h3>
+                </div>
+                <div id="cart-totals-discount" class="flex flex-col gap-3">
+                  <div class="flex justify-between">
+                    <h3>Discount:</h3>
+                    <h3 class="text-red-500">- $10.00</h3>
+                  </div>
+                  <div class="flex justify-between">
+                    <h3>Total:</h3>
+                    <h3 class="font-bold">$59.97</h3>
+                  </div>
+                </div>
+                <button class="border border-black background-beige shadow font-parisienne hover:scale-105 h-12 text-2xl my-3">Make Purchase</button>
+                <div class="flex justify-center gap-2">
+                  <div class="border rounded shadow-sm px-2">
+                    <img class="w-6" src="https://img.icons8.com/color/48/000000/mastercard-logo.png"/>
+                  </div>
+                  <div class="border rounded shadow-sm px-2">
+                    <img class="w-6" src="https://img.icons8.com/fluency/48/000000/paypal.png"/>
+                  </div>
+                  <div class="border rounded shadow-sm px-2">
+                    <img class="w-6" src="./src/assets/img/visa.png"/>
+                  </div>
+                  <div class="border rounded shadow-sm px-2">
+                    <img class="w-6" src="./src/assets/img/american-express.png"/>
+                  </div>
+                </div>
               </section>
             </aside>
           </div>
