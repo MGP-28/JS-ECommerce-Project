@@ -40,6 +40,19 @@ body {
   background-color: var(--color-beige);
 }
 
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.anim-spinner{
+  animation: spin 1.5s linear infinite;
+}
+
 /* Navbar */
 
 nav>section:first-child{

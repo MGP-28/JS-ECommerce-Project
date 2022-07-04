@@ -6,34 +6,15 @@ import { applyDiscount, couponError } from "../views/cart";
 
 let products = []
 
+let cartItemsIds = []
+
 let couponCode = getCoupon()
-
-//testing
-
-/*function test(){
-
-    const shop = document.querySelector('#shop')
-    const btn = document.createElement('button')
-    btn.textContent = 'CLICK ME'
-    btn.addEventListener('click', (e) => {
-        products.forEach(element => {
-            console.log(element)
-            //const product = products[0]
-            //removeUnitFromCart(product, true)
-            //addUnitToCart(product)
-            //updateStoredRating(product, 1)
-        });
-    })
-    shop.append(btn)
-}*/
-
-// add products
 
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
-        console.log(element.image)
-    });    
+    });
+    document.dispatchEvent(new Event ('productsLoaded'))
 }
 
 function addProduct(productAPI){
@@ -68,7 +49,6 @@ export function removeUnitFromCart(product, removeAll = false){
 }
 
 export function getCartItems(){
-    const cartItemsIds = getCartItems()
 
     let cartItems = []
 
@@ -86,17 +66,19 @@ export function getStoredCoupon(){
 }
 
 export async function setStoredCoupon(coupon){
+
+    //needs work
+
     const couponResult = await setCoupon(coupon)
 
     if(verifCouponResult == NaN) {
         couponCode = ''
-        couponError(couponResult)
+        document.querySelector('#cart').dispatchEvent(new CustomEvent('couponError', {detail: {error: couponError}}))
         return
     }
 
     couponCode = coupon
-    applyDiscount(couponResult)
-    
+    document.querySelector('#cart').dispatchEvent(new CustomEvent('applyDiscount', {detail: {couponCode: couponCode}}))
 }
 
 export function resetStoredCoupon(){
