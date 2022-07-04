@@ -17,48 +17,62 @@ export function render(){
 function couponForm(){
     const couponFormEl = document.createElement('form')
     couponFormEl.classList.add('flex', 'gap-5')
+
+    //text input
     couponFormEl.innerHTML += `
         <input required type="text" name="coupon" placeholder="Text" class="px-2 text-sm outline outline-3 outline-gray-300 rounded-sm h-9 w-3/4">
     `
     const couponFormInput = couponFormEl.querySelector('input')
+    if(getStoredCoupon()) insertActiveCouponCode(couponFormInput)
+
+    couponFormInput.addEventListener('focus', (e) => {
+        couponFormInput.value = ''
+        couponFormInput.classList.remove('bg-gray-300', 'border-2', 'border-green-600', 'anim-input-error', 'font-bold', 'text-red-500')
+    })
+    couponFormInput.addEventListener('blur', (e) => {
+        if(getStoredCoupon()){
+            insertActiveCouponCode(couponFormInput)
+        }
+    })
     const cartView = document.querySelector('#cart')
     cartView.addEventListener('couponError', (e) => {
         couponFormInput.value = ''
     })
 
     cartView.addEventListener('couponNotFound', (e) => {
-        couponFormInput.value = ''
+        couponFormInput.classList.add('anim-input-error', 'font-bold', 'text-red-500')
     })
 
     cartView.addEventListener('applyDiscount', (e) => {
-        couponFormInput.classList.add('bg-gray-300')
+        addCouponSuccessClasses(couponFormInput)
     })
-    couponFormInput.addEventListener('focus', (e) => {
-        couponFormInput.classList.remove('bg-gray-300')
-    })
-    couponFormInput.addEventListener('blur', (e) => {
-        const couponCode = getStoredCoupon()
-        if(couponCode){
-            couponFormInput.value = couponCode
-            couponFormInput.classList.add('bg-gray-300')
-        }
-    })
-
+    
+    //form submit button
     const couponFormButton = document.createElement('button')
     couponFormButton.classList.add('w-1/4', 'border', 'border-black', 'background-beige', 'shadow', 'font-parisienne', 'hover:border-orange-300', 'hover:border-2', 'hover:shadow-md')
     couponFormButton.textContent = 'Apply'
 
     couponFormEl.append(couponFormButton)
     
+    //form events
     couponFormEl.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        const couponCode = e.target.coupon.value
-        setStoredCoupon(couponCode)
-
+        const couponCodeInserted = e.target.coupon.value
+        setStoredCoupon(couponCodeInserted)
     })
 
     return couponFormEl
+}
+
+function addCouponSuccessClasses(couponFormInput){
+    couponFormInput.classList.add('bg-gray-300', 'border-2', 'border-green-600')
+}
+
+function insertActiveCouponCode(couponFormInput){
+    const couponCode = getStoredCoupon()
+    couponFormInput.value = couponCode
+    addCouponSuccessClasses(couponFormInput)
 }
 
 

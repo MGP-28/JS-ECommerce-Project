@@ -285,3 +285,20 @@ footer{
     "image text buttons";
   }
 }
+
+@keyframes kf_shake {
+  0% { transform: translate(20px);}
+  12% { transform: translate(-20px); }
+  24% { transform: translate(15px); }
+  36% { transform: translate(-15px); }
+  48% { transform: translate(10px); }
+  60% { transform: translate(-10px); }
+  72% { transform: translate(8px); }
+  84% { transform: translate(-8px); }
+  100% { transform: translate(0px);}
+}
+
+.anim-input-error{
+  animation: kf_shake 1s linear;
+  border: red 2px solid;
+}
