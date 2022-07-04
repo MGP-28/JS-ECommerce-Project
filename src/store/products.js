@@ -2,7 +2,6 @@ import { Product } from "../model/product";
 import { getCoupon } from "../services/json/getCoupon";
 import { resetCoupon } from "../services/json/resetCoupon";
 import { setCoupon } from "../services/json/setCoupon";
-import { applyDiscount, couponError } from "../views/cart";
 
 let products = []
 
@@ -67,18 +66,16 @@ export function getStoredCoupon(){
 
 export async function setStoredCoupon(coupon){
 
-    //needs work
+    const couponResponse = await setCoupon(coupon)
 
-    const couponResult = await setCoupon(coupon)
-
-    if(verifCouponResult == NaN) {
+    if(!couponResponse.response) {
         couponCode = ''
-        document.querySelector('#cart').dispatchEvent(new CustomEvent('couponError', {detail: {error: couponError}}))
+        document.querySelector('#cart').dispatchEvent(new CustomEvent('couponError', {detail: {error: couponResponse.message}}))
         return
     }
 
     couponCode = coupon
-    document.querySelector('#cart').dispatchEvent(new CustomEvent('applyDiscount', {detail: {couponCode: couponCode}}))
+    document.querySelector('#cart').dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
 }
 
 export function resetStoredCoupon(){

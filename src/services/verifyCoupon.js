@@ -5,10 +5,6 @@ export async function verifyCoupon(couponCode){
     const request = await fetch(url)
     const data = request.json()
 
-    if(!data.couponcode){
-        return data.message
-    }
-
-    return data.couponcode.discount
+    return (data.couponCode) ? {response: true, message: data.message, coupon: data.couponCode} : {response: false, message: data.message}
 
 }
