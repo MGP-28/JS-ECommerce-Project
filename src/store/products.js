@@ -1,14 +1,13 @@
 import { Product } from "../model/product";
 import { getCartItems } from "../services/json/getCartItems";
 import { getCoupon } from "../services/json/getCoupon";
-import { resetCoupon } from "../services/json/resetCoupon";
 import { setCoupon } from "../services/json/setCoupon";
 
 let products = []
 
 let cartItemsIds = []
 
-let couponCode = getCoupon()
+let coupon = getCoupon()
 
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
@@ -70,29 +69,38 @@ export function getStoredCartItems(){
 // coupon
 
 export function getStoredCoupon(){
-    return couponCode
+    return coupon.code
 }
 
-export async function setStoredCoupon(coupon){
+export function getStoredDiscount(){
+    return coupon.discount
+}
 
-    const couponResponse = await setCoupon(coupon)
-
+export async function setStoredCoupon(couponCode){
+    
     const cartView = document.querySelector('#cart')
+
+    if(!couponCode) {
+        coupon.code = ''
+        coupon.discount = ''
+        setCoupon(couponCode)
+        cartView.dispatchEvent(new Event('resetDiscount'))
+        return
+    }
+
+    const couponResponse = await setCoupon(couponCode)
 
     if(!couponResponse){ cartView.dispatchEvent(new Event('couponError')); return }
 
     if(!couponResponse.response) {
-        couponCode = ''
+        coupon.code = ''
+        coupon.discount = ''
         cartView.dispatchEvent(new CustomEvent('couponNotFound', {detail: {error: couponResponse.message}}))
-        return
+    }
+    else{
+        coupon.code = couponResponse.coupon.code
+        coupon.discount = couponResponse.coupon.discount
+        cartView.dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
     }
 
-    couponCode = coupon
-    cartView.dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
-}
-
-export function resetStoredCoupon(){
-    resetCoupon()
-    couponCode = ''
-    console.log('coupon => ' + couponCode)
 }

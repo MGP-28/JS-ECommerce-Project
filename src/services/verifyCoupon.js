@@ -1,6 +1,6 @@
 export async function verifyCoupon(couponCode){
 
-    let retries = 20
+    let retries = 3
 
     const url = 'http://localhost:6868/couponcode?couponcode=' + couponCode
 
