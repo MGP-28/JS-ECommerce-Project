@@ -1,12 +1,12 @@
 import { verifyCoupon } from "../verifyCoupon";
 
-export async function setCoupon(code){
+export async function setCoupon(couponCode){
 
-    const verifCouponResponse = await verifyCoupon()
+    const verifCouponResponse = await verifyCoupon(couponCode)
 
-    if(!verifCouponResponse.response) code = ""
+    if(!verifCouponResponse.response) couponCode = ""
 
-    localStorage.setItem("couponCode", code)
+    localStorage.setItem("couponCode", couponCode)
 
     return verifCouponResponse
 

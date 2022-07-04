@@ -19,7 +19,11 @@ export function cart(){
 
 function eventListeners(cartView, pageContainerEl){
     cartView.addEventListener('couponError', (e) => {
-        //popup(error, e.detail.error)
+        //popup(error, 'Error connecting')
+    })
+
+    cartView.addEventListener('couponNotFound', (e) => {
+        //popup(error, 'Coupon not valid')
     })
 
     cartView.addEventListener('applyDiscount', (e) => {

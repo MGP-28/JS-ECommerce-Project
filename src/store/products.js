@@ -46,7 +46,6 @@ export function updateStoredRating(product, rating){
 
 export function addUnitToCart(product){
     product.addUnitToCart()
-    console.log(cartItemsIds, products)
 }
 
 export function removeUnitFromCart(product, removeAll = false){
@@ -78,17 +77,22 @@ export async function setStoredCoupon(coupon){
 
     const couponResponse = await setCoupon(coupon)
 
+    const cartView = document.querySelector('#cart')
+
+    if(!couponResponse){ cartView.dispatchEvent(new Event('couponError')); return }
+
     if(!couponResponse.response) {
         couponCode = ''
-        document.querySelector('#cart').dispatchEvent(new CustomEvent('couponError', {detail: {error: couponResponse.message}}))
+        cartView.dispatchEvent(new CustomEvent('couponNotFound', {detail: {error: couponResponse.message}}))
         return
     }
 
     couponCode = coupon
-    document.querySelector('#cart').dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
+    cartView.dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
 }
 
 export function resetStoredCoupon(){
     resetCoupon()
     couponCode = ''
+    console.log('coupon => ' + couponCode)
 }
