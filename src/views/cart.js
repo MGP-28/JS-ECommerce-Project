@@ -32,8 +32,8 @@ function eventListeners(cartView, pageContainerEl){
 
     document.addEventListener('productsLoaded', (e) => {
         pageContainerEl.innerHTML = ''
-        pageContainerEl.classList.add('grid-cols-2', 'cart-page-components-grid-cols')
+        pageContainerEl.classList.add('cart-page-components-grid-cols')
         pageContainerEl.append(renderCartList())
-        pageContainerEl.append(renderCheckoutAside())
+        renderCheckoutAside(pageContainerEl)
     })
 }

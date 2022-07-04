@@ -12,10 +12,12 @@ function render(cartItem){
     cartItemGridEl.append(renderImg(cartItem))
 
     cartItemGridEl.append(renderText(cartItem))
-    
-    cartItemGridEl.append(renderCartItemQuantity(cartItem, cartItemEl))
 
-    cartItemGridEl.append(renderItemCartDelete(cartItem, cartItemEl))
+    const buttonsContainerEl = document.createElement('div')
+    buttonsContainerEl.classList.add('cart-item-buttons', 'flex', 'gap-4')
+    buttonsContainerEl.append(renderCartItemQuantity(cartItem, cartItemEl))
+    buttonsContainerEl.append(renderItemCartDelete(cartItem, cartItemEl))
+    cartItemGridEl.append(buttonsContainerEl)
 
     const dividerEl = document.createElement('div')
     dividerEl.classList.add('cart-item-divider', 'w-full', 'border-t')
@@ -31,7 +33,7 @@ function render(cartItem){
 
 function renderImg(cartItem){
     const containerEl = document.createElement('div')
-    containerEl.classList.add('w-24', 'h-24', 'overflow-hidden', 'grid')
+    containerEl.classList.add('cart-item-image', 'w-24', 'h-24', 'overflow-hidden', 'grid')
 
     const imgEl = document.createElement('img')
     imgEl.setAttribute('src', cartItem.image)
@@ -46,7 +48,7 @@ function renderImg(cartItem){
 
 function renderText(cartItem){
     const containerEl = document.createElement('div')
-    containerEl.classList.add('flex', 'flex-col', 'gap-3', 'overflow-hidden')
+    containerEl.classList.add('cart-item-text', 'flex', 'flex-col', 'gap-3', 'overflow-hidden')
 
     const titleEl = document.createElement('h1')
     titleEl.textContent = cartItem.title

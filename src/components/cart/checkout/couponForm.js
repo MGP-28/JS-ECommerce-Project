@@ -34,13 +34,10 @@ function couponForm(){
         couponFormInput.classList.add('bg-gray-300')
     })
     couponFormInput.addEventListener('focus', (e) => {
-        console.log('focus')
         couponFormInput.classList.remove('bg-gray-300')
     })
-    couponFormInput.addEventListener('blur ', (e) => {
-        console.log('blur')
+    couponFormInput.addEventListener('blur', (e) => {
         const couponCode = getStoredCoupon()
-        console.log(couponCode)
         if(couponCode){
             couponFormInput.value = couponCode
             couponFormInput.classList.add('bg-gray-300')
