@@ -1,6 +1,6 @@
 import { renderCheckoutAside } from "../components/cart/checkout/checkoutAside"
 import { renderCartList } from "../components/cart/items/cartItemList"
-import { getCartItems } from "../store/products"
+import { getStoredCartItems } from "../store/products"
 
 export function cart(){
     let cartView = document.querySelector('#cart')
@@ -28,7 +28,6 @@ function eventListeners(cartView, pageContainerEl){
     })
 
     document.addEventListener('productsLoaded', (e) => {
-        const cartItems = getCartItems()
         pageContainerEl.innerHTML = ''
         pageContainerEl.classList.add('grid-cols-2', 'cart-page-components-grid-cols')
         pageContainerEl.append(renderCartList())

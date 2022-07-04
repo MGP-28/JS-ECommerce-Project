@@ -12,6 +12,4 @@ export function render(){
     return checkoutAsideEl
 }
 
-
-
 export {render as renderCheckoutAside}

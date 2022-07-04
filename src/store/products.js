@@ -1,4 +1,5 @@
 import { Product } from "../model/product";
+import { getCartItems } from "../services/json/getCartItems";
 import { getCoupon } from "../services/json/getCoupon";
 import { resetCoupon } from "../services/json/resetCoupon";
 import { setCoupon } from "../services/json/setCoupon";
@@ -13,6 +14,9 @@ export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
     });
+
+    loadCartItems()
+    
     document.dispatchEvent(new Event ('productsLoaded'))
 }
 
@@ -23,6 +27,13 @@ function addProduct(productAPI){
         id, title, description, price, image, rating
     )
     products.push(product)
+}
+
+function loadCartItems(){
+    const cartItems = getCartItems()
+    cartItems.forEach(element => {
+        cartItemsIds.push(element.id)
+    });
 }
 
 // rating
@@ -47,13 +58,9 @@ export function removeUnitFromCart(product, removeAll = false){
     }
 }
 
-export function getCartItems(){
+export function getStoredCartItems(){
 
-    let cartItems = []
-
-    for (let product in products) {
-        if(cartItemsIds.includes(product.id)) cartItems.push(product)
-    }
+    let cartItems = products.filter(el => cartItemsIds.includes(el.id))
 
     return cartItems
 }

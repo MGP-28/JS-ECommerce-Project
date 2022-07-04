@@ -1,22 +1,27 @@
+import { getStoredCartItems } from "../../../store/products";
 import { renderCartItem } from "./cartItem";
 
-function render(products){
-    const cartListEl = document.createElement('ul')
+const cartListEl = document.createElement('ul')
+
+function render(){
     cartListEl.classList.add('px-5', 'bg-white', 'rounded-md', 'h-min')
 
-    /*products.forEach(element => {
-        cartListEl.append(renderCartItem(element))
-    });*/
-
-    //placeholder
-    for (let index = 0; index < 6; index++) {
-        cartListEl.append(renderCartItem()) 
-    }
+    renderItems()
 
     //events
-    
+    document.querySelector('#cart').addEventListener('cartChanged', () => {
+        renderItems()
+    })
 
     return cartListEl
+}
+
+function renderItems(){
+    const cartItems = getStoredCartItems()
+    cartListEl.textContent = ''
+    cartItems.forEach(element => {
+        cartListEl.append(renderCartItem(element))
+    });
 }
 
 export {render as renderCartList}

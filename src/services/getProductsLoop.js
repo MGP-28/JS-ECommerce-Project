@@ -2,7 +2,7 @@ import { getProductsFromAPI } from "./getProducts";
 
 export async function getProducts(){
     
-    let retries = 50
+    let retries = 20
 
     let products = []
 
@@ -16,12 +16,7 @@ export async function getProducts(){
         }    
     }
 
-    return products
-
+    return (retries == 0) 
+        ? console.log('couldnt load products')
+        : products
 }
-
-/*async function callAgain(){
-    setTimeout(() => {
-        getProducts()
-    }, 1500);
-}*/
