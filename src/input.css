@@ -244,3 +244,55 @@ footer{
   padding: 40px;
   margin: 20px;
 }
+
+#contact-team{
+  background-color: var(--color-beige);
+}
+
+#contact-team-span{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+#contact-userData{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-user1-img{
+  margin-left: 40%;
+  height: 110px;
+  width: 150px;
+  border-radius: 50px;
+}
+
+#contact-userName{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+#contact-userWork{
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: darkgray;
+}
+
+#contact-userDescription{
+  margin-left: 30%;
+  font-size: 14px;
+  color: darkgray;
+  width: 300px;
+}
+
+#contact-userButton{
+  margin-top: 15px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 200px;
+  padding: 10px;
+  border: solid var(--color-black);
+}
