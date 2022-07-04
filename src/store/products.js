@@ -46,15 +46,20 @@ export function updateStoredRating(product, rating){
 
 export function addUnitToCart(product){
     product.addUnitToCart()
+    console.log(cartItemsIds, products)
 }
 
 export function removeUnitFromCart(product, removeAll = false){
     if (removeAll) { 
         product.deleteFromCart()
+        cartItemsIds = cartItemsIds.filter(el => el != product.id)
+        console.log(cartItemsIds, products)
         return
     }
     if (product.quantity > 1) {
         product.removeUnitFromCart()
+        console.log(cartItemsIds, products)
+        return true
     }
 }
 

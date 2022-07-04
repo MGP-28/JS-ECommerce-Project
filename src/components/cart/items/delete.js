@@ -1,3 +1,4 @@
+import { removeUnitFromCart } from "../../../store/products"
 import { renderGenericCartButton } from "./generic/cartButton"
 
 function render(cartItem, parent){
@@ -7,7 +8,7 @@ function render(cartItem, parent){
     //events
     deleteEl.addEventListener('click', ()=>{
 
-        //store, ...
+        removeUnitFromCart(cartItem, true)
         
         parent.dispatchEvent(new Event('removeSelf'))
     })

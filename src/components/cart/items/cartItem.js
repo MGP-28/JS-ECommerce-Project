@@ -31,11 +31,15 @@ function render(cartItem){
 
 function renderImg(cartItem){
     const containerEl = document.createElement('div')
-    containerEl.classList.add('bg-green-700', 'w-24', 'h-24', 'overflow-hidden')
+    containerEl.classList.add('w-24', 'h-24', 'overflow-hidden', 'grid')
 
     const imgEl = document.createElement('img')
     imgEl.setAttribute('src', cartItem.image)
     containerEl.append(imgEl)
+    
+    imgEl.addEventListener('load', (e)=>{
+        if(e.target.width > e.target.height) imgEl.classList.add('place-self-center')
+    })
 
     return containerEl
 }

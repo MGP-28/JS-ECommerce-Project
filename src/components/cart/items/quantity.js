@@ -1,3 +1,4 @@
+import { addUnitToCart, removeUnitFromCart } from "../../../store/products"
 import { renderGenericCartButton } from "./generic/cartButton"
 
 function render(cartItem, parent){
@@ -17,9 +18,8 @@ function minusBtn(cartItem, parent){
     //events
     minusBtn.addEventListener('click', () => {
 
-        //store, ...
-
-        parent.dispatchEvent(new Event('itemQuantityChanged'))
+        const hasChanged = removeUnitFromCart(cartItem, false)
+        if(hasChanged) parent.dispatchEvent(new Event('itemQuantityChanged'))
     })
 
     return minusBtn
@@ -46,7 +46,7 @@ function plusBtn(cartItem, parent){
     //events
     plusBtn.addEventListener('click', () => {
 
-        //store, ...
+        addUnitToCart(cartItem)
 
         parent.dispatchEvent(new Event('itemQuantityChanged'))
     })

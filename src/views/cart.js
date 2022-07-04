@@ -1,6 +1,5 @@
 import { renderCheckoutAside } from "../components/cart/checkout/checkoutAside"
 import { renderCartList } from "../components/cart/items/cartItemList"
-import { getStoredCartItems } from "../store/products"
 
 export function cart(){
     let cartView = document.querySelector('#cart')
