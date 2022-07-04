@@ -1,3 +1,4 @@
+import { renderCheckoutAside } from "../components/cart/checkout/checkoutAside"
 import { renderCartList } from "../components/cart/items/cartItemList"
 
 export function cart(){
@@ -13,8 +14,7 @@ export function cart(){
     `
     const pageContainerEl = cartPage.querySelector('#cart-list-grid')
     pageContainerEl.append(renderCartList())
-    //pageContainerEl.append(renderCoupon())
-    //pageContainerEl.append(renderTotals())
+    pageContainerEl.append(renderCheckoutAside())
 }
 
 function eventListeners(){
