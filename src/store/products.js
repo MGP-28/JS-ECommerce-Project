@@ -33,6 +33,11 @@ function loadCartItems(){
     cartItems.forEach(element => {
         cartItemsIds.push(element.id)
     });
+    if(!cartItemsIds) document.dispatchEvent(new Event('cartEmpty'))
+}
+
+export function getStoredProducts(){
+    return products
 }
 
 // rating
@@ -44,13 +49,19 @@ export function updateStoredRating(product, rating){
 // cart
 
 export function addUnitToCart(product){
+    
     product.addUnitToCart()
+    
+    if (!cartItemsIds.includes(product.id)) cartItemsIds.push(product.id);
+
+    document.dispatchEvent(new CustomEvent('cartChanged', {detail: (product.quantity == 1)}))
 }
 
 export function removeUnitFromCart(product, removeAll = false){
     if (removeAll) { 
         product.deleteFromCart()
         cartItemsIds = cartItemsIds.filter(el => el != product.id)
+        if(cartItemsIds.length == 0) {document.dispatchEvent(new Event('cartEmpty'))}
         return
     }
     if (product.quantity > 1) {
@@ -61,7 +72,7 @@ export function removeUnitFromCart(product, removeAll = false){
 
 export function getStoredCartItems(){
 
-    let cartItems = products.filter(el => cartItemsIds.includes(el.id))
+    const cartItems = products.filter(el => cartItemsIds.includes(el.id))
 
     return cartItems
 }

@@ -15,7 +15,7 @@ function render(cartItem){
 
     const buttonsContainerEl = document.createElement('div')
     buttonsContainerEl.classList.add('cart-item-buttons', 'flex', 'gap-4')
-    buttonsContainerEl.append(renderCartItemQuantity(cartItem, cartItemEl))
+    buttonsContainerEl.append(renderCartItemQuantity(cartItem))
     buttonsContainerEl.append(renderItemCartDelete(cartItem, cartItemEl))
     cartItemGridEl.append(buttonsContainerEl)
 

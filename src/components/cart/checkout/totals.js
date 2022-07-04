@@ -7,7 +7,7 @@ export function render(){
     checkoutTotalsEl.innerHTML = `
         <div class="flex justify-between">
             <h3>Total Price:</h3>
-            <h3>$ ${getTotals()}</h3>
+            <h3>$ <span id="cart-subtotal">${getTotals().toFixed(2)}</span></h3>
         </div>
         <div id="cart-totals-discount" class="flex flex-col gap-3 hidden">
             <div class="flex justify-between">
@@ -58,7 +58,12 @@ export function render(){
         toggleDiscountTab(discountTab, false)
     })
 
-    checkForDiscountApplied(checkoutTotalsEl, discountTab)
+    document.addEventListener('cartChanged', (e) => {
+        updateTotal(checkoutTotalsEl)
+        applyDiscount(checkoutTotalsEl)
+    })
+
+    checkForCartItems(checkoutTotalsEl, discountTab)
 
     return checkoutTotalsEl
 }
@@ -87,14 +92,21 @@ function toggleDiscountTab(discountTab, isShown){
     (isShown) ? discountTab.classList.remove('hidden') : discountTab.classList.add('hidden')
 }
 
+function updateTotal(checkoutTotalsEl){
+    checkoutTotalsEl.querySelector('#cart-subtotal').textContent = getTotals().toFixed(2)
+}
+
 function applyDiscount(checkoutTotalsEl){
     const sum = getTotals()
     const discount = getStoredDiscount()
-    checkoutTotalsEl.querySelector('#cart-savings').textContent = Math.round((sum * (discount/100) + Number.EPSILON) * 100) / 100
-    checkoutTotalsEl.querySelector('#cart-final-price').textContent = Math.round((sum - (sum * (discount/100)) + Number.EPSILON) * 100) / 100
+    checkoutTotalsEl.querySelector('#cart-savings').textContent = (sum * (discount/100)).toFixed(2)
+    checkoutTotalsEl.querySelector('#cart-final-price').textContent = (sum - (sum * (discount/100))).toFixed(2)
 }
 
-function checkForDiscountApplied(checkoutTotalsEl, discountTab){
+function checkForCartItems(checkoutTotalsEl, discountTab){
+    
+    if(!getTotals()) return
+
     if(getStoredDiscount()) {
         toggleDiscountTab(discountTab, true)
         applyDiscount(checkoutTotalsEl)

@@ -11,6 +11,7 @@ function render(cartItem, parent){
         removeUnitFromCart(cartItem, true)
         
         parent.dispatchEvent(new Event('removeSelf'))
+        document.dispatchEvent(new CustomEvent('cartChanged', {detail: false}))
     })
 
     deleteContainerEl.append(deleteEl)

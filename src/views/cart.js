@@ -7,8 +7,9 @@ export function cart(){
         <div class="w-full flex justify-center">
             <div class="flex flex-col justify-center w-3/4 my-20">
                 <h1 class="font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
+                <div id="cart-empty-message" class="hidden mt-16 text-xl font-semibold text-center">You have no items in cart!</div>
                 <div id="cart-list-grid" class="w-full grid gap-10">
-                <i class="fa-solid fa-spinner anim-spinner place-self-center h-16"></i>
+                    <i class="fa-solid fa-spinner anim-spinner place-self-center h-16"></i>
                 </div>
             </div>
         </div>
@@ -35,5 +36,11 @@ function eventListeners(cartView, pageContainerEl){
         pageContainerEl.classList.add('cart-page-components-grid-cols')
         pageContainerEl.append(renderCartList())
         renderCheckoutAside(pageContainerEl)
+    })
+
+    document.addEventListener('cartEmpty', (e) => {
+        cartView.querySelector('#cart-list-grid').classList.add('hidden')
+        cartView.querySelector('#cart-empty-message').classList.remove('hidden')
+        pageContainerEl.classList.add('hidden')
     })
 }
