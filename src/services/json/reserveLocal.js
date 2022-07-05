@@ -7,8 +7,8 @@ export function reserveLocalStorage(){
     }
 
     //coupon data
-    if(!localStorage.getItem("couponCode")){
-        const couponCode = ''
-        localStorage.setItem("couponCode", couponCode);
+    if(!localStorage.getItem("coupon")){
+        const coupon = {code: '', discount: ''}
+        localStorage.setItem("coupon", JSON.stringify(coupon));
     }
 }

@@ -1,12 +1,19 @@
 import { verifyCoupon } from "../verifyCoupon";
 
-export async function setCoupon(code){
+export async function setCoupon(couponCode){
 
-    const verifCouponResult = await verifyCoupon()
+    if(!couponCode) {resetCoupon(); return}
 
-    if(verifCouponResult == NaN) code = ""
+    const verifCouponResponse = await verifyCoupon(couponCode)
 
-    localStorage.setItem("couponCode", code)
-    return verifCouponResult
+    if(!verifCouponResponse.response) resetCoupon()
 
+    else localStorage.setItem("coupon", JSON.stringify({code: verifCouponResponse.coupon.code, discount: verifCouponResponse.coupon.discount}))
+
+    return verifCouponResponse
+
+}
+
+function resetCoupon(){
+    localStorage.setItem("coupon", JSON.stringify({code:'',discount:''}))
 }
