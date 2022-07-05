@@ -1,6 +1,9 @@
+import { renderSearchBar } from "../topRow/search";
 import { renderProductCard } from "./productCard";
 
 function renderProductList() {
+
+    
 
     const productListContainerEl = document.createElement('div');
 
@@ -13,6 +16,8 @@ function renderProductList() {
     productListEl.append(renderProductCard());
 
     productListContainerEl.append(productListEl);
+
+    
 
     return productListContainerEl;
 }

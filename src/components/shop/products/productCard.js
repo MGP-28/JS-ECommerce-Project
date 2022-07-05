@@ -1,6 +1,6 @@
 import { rating } from "./rating.js";
 
-export function renderProductCard () {
+function renderProductCard () {
 
     const productCardContainerEl = document.createElement("div");
 
@@ -46,3 +46,5 @@ export function renderProductCard () {
 
     return productCardContainerEl;
 }
+
+export {renderProductCard}
