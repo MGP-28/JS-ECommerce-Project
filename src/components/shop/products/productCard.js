@@ -1,7 +1,7 @@
 import { addToCart } from "./addToCart.js";
 import { rating } from "./rating.js";
 
-function renderProductCard () {
+function renderProductCard (product) {
 
     const productCardContainerEl = document.createElement("div");
 
@@ -21,22 +21,24 @@ function renderProductCard () {
 
     const imgEl = document.createElement('img');
 
+    imgEl.setAttribute('src', product.image);
+
     imgContainerEl.append(imgEl);
 
-    imgContainerEl.append(rating());
+    imgContainerEl.append(rating(product));
 
     productCardEl.innerHTML += `
     <div class="px-8 py-6 product-card-text gap-5">
         <h4 class="cardName text-left">
-          Men´s black Tie Valentino
+          ${product.title}
         </h4>
 
         <h4 class="cardDescription place-self-center text-justify text-gray-500">
-          The fedora hat is reimagined for Pre-Fall 2020 with a maxi embroided label de Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint accusantium iure tempore beatae enim recusandae laboriosam cum dolores aliquam voluptatem consequuntur totam facilis iusto, rerum, sed similique maxime ullam quidem.
+          ${product.description}
         </h4>
 
         <h4 class="cardPrice flex items-center leading-loose">
-          $225
+          ${product.price.toFixed(2)}
         </h4>
 
     </div>

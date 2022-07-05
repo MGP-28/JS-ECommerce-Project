@@ -6,7 +6,7 @@ export function rating(product){
     ratingEl.classList.add('relative', 'w-3/5', 'h-10',  'card-rating', 'grid', 'place-items-center', 'grid-cols-5', 'text-amber-400');
 
     for (let position = 1; position <= 5; position++) {
-        ratingEl.append(star(position));
+        ratingEl.append(star(product, position));
     }
 
     return ratingEl;

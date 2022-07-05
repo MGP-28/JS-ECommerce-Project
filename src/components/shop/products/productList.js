@@ -1,4 +1,4 @@
-import { renderSearchBar } from "../topRow/search";
+import { getStoredProducts } from "../../../store/products";
 import { renderProductCard } from "./productCard";
 
 function renderProductList() {
@@ -13,7 +13,11 @@ function renderProductList() {
 
     productListEl.classList.add('shop-grid-container', 'flex', 'flex-wrap', 'gap-10', 'justify-center');
 
-    productListEl.append(renderProductCard());
+    const products = getStoredProducts();
+
+    products.forEach((product) => {
+        productListEl.append(renderProductCard(product));
+    });
 
     productListContainerEl.append(productListEl);
 
