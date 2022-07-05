@@ -115,3 +115,13 @@ export async function setStoredCoupon(couponCode){
     }
 
 }
+
+export function getStoredTotals(){
+    const cartItems = getStoredCartItems()
+    const baseSum = cartItems.reduce((sum, product) => {
+        return sum + (product.price * product.quantity)
+    },0);
+    const discountedTotal = sum - (sum * coupon.discount)
+
+    return {subtotal: baseSum, discountedTotal: discountedTotal}
+}
