@@ -121,7 +121,14 @@ export function getStoredTotals(){
     const baseSum = cartItems.reduce((sum, product) => {
         return sum + (product.price * product.quantity)
     },0);
-    const discountedTotal = sum - (sum * coupon.discount)
+    const discountedTotal = baseSum - (baseSum * (coupon.discount / 100))
 
     return {subtotal: baseSum, discountedTotal: discountedTotal}
+}
+
+export function resetPurchases(){
+    getStoredCartItems().forEach(element => {
+        removeUnitFromCart(element, true)
+    });
+    setStoredCoupon('')
 }
