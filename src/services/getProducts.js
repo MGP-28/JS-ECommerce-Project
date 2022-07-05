@@ -1,4 +1,4 @@
-async function getProducts() {
+async function getProductsFromAPI() {
 
   const url = 'https://fakestoreapi.com/products/category/jewelery';
 
@@ -18,8 +18,10 @@ async function getProducts() {
 
     console.log(error, 'Error fetching data');
 
+    throw error
+
   } 
 }
 
-export { getProducts };
+export { getProductsFromAPI };
 

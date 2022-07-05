@@ -34,6 +34,27 @@ body {
   font-size: 40px;
 }
 
+.background-half{
+  background-color: rgba(128, 128, 128, 0.5)
+}
+
+.background-beige{
+  background-color: var(--color-beige);
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.anim-spinner{
+  animation: spin 1.5s linear infinite;
+}
+
 /* Navbar */
 
 nav>section:first-child{
@@ -56,7 +77,7 @@ li{
 }
 
 #nav-links-mobile{
-  top: 80%; 
+  bottom: 80px; 
   right: 50%;
   transform: translate(50%,-50%);
 }
@@ -305,7 +326,7 @@ footer{
 	border: 1px solid rgb(48,49,51);
 	border-radius: 50%;
 	box-shadow: inset 0 0 0 2px white,
-					    0 0 0 4px white;
+					    0 0 0 4px var(--color-beige);
 }
 
 #about-gallery-grid>div{
@@ -317,6 +338,88 @@ footer{
   transition: 1s;
 }
 
-.background-half{
-  background-color: rgba(128, 128, 128, 0.5)
+
+/* cart */
+
+#cart-item-list>li:last-child .cart-item-divider{
+  display: none;
 }
+
+.cart-item-row{
+  grid-template-columns: 96px auto;
+  grid-template-areas: 
+    "image text"
+    "empty buttons";
+}
+
+.cart-item-image{
+  grid-area: image;
+}
+
+.cart-item-text{
+  grid-area: text;
+}
+
+.cart-item-buttons{
+  grid-area: buttons;
+}
+
+.cart-page-components-grid-cols{
+  grid-template-areas: 
+    "coupon"
+    "items"
+    "totals";
+  grid-template-columns: auto;
+}
+
+#cart-list-grid>ul {
+  grid-area: items;
+}
+
+#cart-list-grid>section:nth-child(2) {
+  grid-area: coupon;
+}
+
+#cart-totals {
+  grid-area: totals;
+  height: max-content;
+}
+
+@media screen and (min-width: 1150px) {
+  .cart-item-row{
+    grid-template-columns: 96px auto;
+  }
+  .cart-page-components-grid-cols{
+    grid-template-rows: 128px auto;
+    grid-template-columns: auto 370px;
+    grid-template-areas: 
+    "items coupon"
+    "items totals";
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .cart-item-row{
+    grid-template-columns: 96px auto 176px;
+    grid-template-areas: 
+    "image text buttons";
+  }
+}
+
+@keyframes kf_shake {
+  0% { transform: translate(20px);}
+  12% { transform: translate(-20px); }
+  24% { transform: translate(15px); }
+  36% { transform: translate(-15px); }
+  48% { transform: translate(10px); }
+  60% { transform: translate(-10px); }
+  72% { transform: translate(8px); }
+  84% { transform: translate(-8px); }
+  100% { transform: translate(0px);}
+}
+
+.anim-input-error{
+  animation: kf_shake 1s linear;
+  border: red 2px solid;
+}
+
