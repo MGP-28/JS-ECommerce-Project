@@ -63,7 +63,61 @@ footer{
 }
 
 @media screen and (max-width: 767px) {
-  
+
+  #contact-map-iframe{
+    height: 300px;
+    width: 300px;
+  }
+
+  #contact-name{
+    width: 200px;
+  }
+
+  #contact-email{
+    width: 200px;
+  }
+
+  #contact-message{
+    width: 200px;
+  }
+
+  #contact-submit{
+    width: 200px;
+  }
+
+  #contact-map-span{
+    position: absolute;
+  }
+
+  #contact-form{
+    height: 998px;
+  }
+
+  #contact-user-img{
+    position: relative;
+    right: 24%;
+  }
+
+  #contact-userName{
+    text-align: left;
+    margin-left: 120px ;
+  }
+
+  #contact-userWork{
+    text-align: left;
+    margin-left: 120px ;
+  }
+
+  #contact-userDescription{
+    position: absolute;
+    right: 40px;
+  }
+
+  #contact-userButton{
+    position: relative;
+    top: 35%;
+    right: 23%;
+  }
 }
 
 
@@ -173,7 +227,7 @@ footer{
   align-items: center;
 }
 
-#contact-user1-img{
+#contact-user-img{
   margin-left: 40%;
   height: 110px;
   width: 150px;
