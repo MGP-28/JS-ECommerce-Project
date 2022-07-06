@@ -7,9 +7,15 @@ export function shop(){
 
     shopContainerEl.classList.add('sm:px-16', 'py-10', 'flex', 'flex-col', 'gap-10');
     
-    shopContainerEl.append(renderTopRow());
-    
-    shopContainerEl.append(renderProductList());
-    
     document.querySelector('#shop').append(shopContainerEl);
+    
+    shopContainerEl.append(renderTopRow());
+
+    //shopContainerEl.append()
+
+    document.addEventListener('productsLoaded', (e) => {
+        console.log('dsfsdfds')
+        shopContainerEl.append(renderProductList());
+    })
+    
 }

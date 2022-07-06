@@ -3,8 +3,6 @@ import { renderProductCard } from "./productCard";
 
 function renderProductList() {
 
-    
-
     const productListContainerEl = document.createElement('div');
 
     productListContainerEl.classList.add('flex', 'justify-center');
