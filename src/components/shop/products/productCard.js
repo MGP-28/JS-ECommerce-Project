@@ -39,7 +39,7 @@ function renderProductCard (product) {
 
     </div>
     `
-    productCardEl.querySelector('div.product-card-text').append(addToCart());
+    productCardEl.querySelector('div.product-card-text').append(addToCart(product));
 
     const shop = document.querySelector('#shop')
 

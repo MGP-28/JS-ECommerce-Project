@@ -7,23 +7,19 @@ function star(product, position, parent){
     //events
 
 	parent.addEventListener('paintStars', (e) => {
-        console.log('paint; position => ', e.detail)
 		if (position <= e.detail.maxPosition) filledStar(starContainerEl)
 		else hollowStar(starContainerEl)
 	})
 	
     starContainerEl.addEventListener('mouseenter', () => {
-        console.log('over')
         paintStarsEventDispatcher(position, parent);
     });
 
     starContainerEl.addEventListener('mouseleave', () => {
-        console.log('out')
         paintStarsEventDispatcher(product.rating, parent);
     });
 
     starContainerEl.addEventListener('click', (e) => {
-        console.log('click')
         updateStoredRating(product, position);
         paintStarsEventDispatcher(product.rating, parent);
     });
