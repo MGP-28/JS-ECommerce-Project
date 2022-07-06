@@ -8,15 +8,12 @@ export function shop(){
     shopContainerEl.classList.add('sm:px-16', 'py-10', 'flex', 'flex-col', 'gap-10');
     
     shopContainerEl.append(renderTopRow());
-<<<<<<< Updated upstream
-=======
 
     //shopContainerEl.append()
 
     document.addEventListener('productsLoaded', (e) => {
         shopContainerEl.append(renderProductList());
     })
->>>>>>> Stashed changes
     
     shopContainerEl.append(renderProductList());
     

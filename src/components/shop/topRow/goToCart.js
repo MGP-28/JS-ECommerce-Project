@@ -10,17 +10,15 @@ function goToCart(){
 
 
 
-    // shopBtn.addEventListener('click',(e) => {
-    //     e = new CustomEvent('changeView', { 
-    //         detail: { 
-    //             view:'cart'
-    //         } 
-    //     });
+    shopBtn.addEventListener('click',(e) => {
+        const event = new CustomEvent('changeView', { 
+            detail: { 
+                view:'cart'
+            } 
+        });
 
-    //     document.dispatchEvent(e);
-
-    // });
-
+        document.dispatchEvent(event);
+    });
 
 
     //changes
