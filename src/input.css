@@ -62,6 +62,8 @@ footer{
   transform: translate(50%,-50%);
 }
 
+/*Css of the mobile version of the contact page*/
+
 @media screen and (max-width: 767px) {
 
   #contact-map-iframe{
@@ -120,7 +122,9 @@ footer{
   }
 }
 
+/*-----------------------------------------------------------------------*/
 
+/*Css of the introduction of the page*/
 
 #contact-introduction{
   position: relative;
@@ -149,6 +153,10 @@ footer{
   font-size:60px;
   color: var(--color-orange);
 }
+
+/*-----------------------------------------------------------------------*/
+
+/*Css of the form and it's inputs*/
 
 #contact-form{
   background-image: url(/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
@@ -208,6 +216,10 @@ footer{
   margin: 20px;
 }
 
+/*-----------------------------------------------------------------------*/
+
+/*Css of the information about the team*/
+
 #contact-team{
   background-color: var(--color-beige);
 }
@@ -263,3 +275,5 @@ footer{
   border: solid var(--color-black);
   font-family: Parisienne;
 }
+
+/*-----------------------------------------------------------------------*/
