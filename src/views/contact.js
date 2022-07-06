@@ -33,7 +33,7 @@ export function contact(){
           </h1>
           <div class="grid md:grid-cols-2" id="contact-user">
             <div class="grid" id="contact-userData">
-              <img src="/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg" alt="" id="contact-user-img">
+              <img src="" alt="" id="contact-user-img">
               <span id="contact-userName">
                 Nome do Mans
               </span>
@@ -46,7 +46,7 @@ export function contact(){
               <button type="submit" id="contact-userButton">Send Message</button>
             </div>
             <div class="grid" id="contact-userData">
-              <img src="/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg" alt="" id="contact-user-img">
+              <img src="" alt="" id="contact-user-img">
               <span id="contact-userName">
                 Nome do Mans
               </span>

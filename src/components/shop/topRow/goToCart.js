@@ -1,3 +1,5 @@
+import { changeView } from "../../../views/generic/changeView";
+
 function goToCart(){
     
     const shopBtn = document.createElement('button');
@@ -8,18 +10,9 @@ function goToCart(){
 
     shopBtn.textContent = 'Go to Cart';
 
-
-
     shopBtn.addEventListener('click',(e) => {
-        const event = new CustomEvent('changeView', { 
-            detail: { 
-                view:'cart'
-            } 
-        });
-
-        document.dispatchEvent(event);
+        changeView('cart')
     });
-
 
     //changes
     return shopBtn; 

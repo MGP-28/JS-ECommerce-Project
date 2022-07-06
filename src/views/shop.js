@@ -1,3 +1,4 @@
+import { renderSpinner } from "../components/generic/spinner";
 import { renderProductList } from "../components/shop/products/productList";
 import { renderTopRow } from "../components/shop/topRow/topRow";
 
@@ -11,11 +12,12 @@ export function shop(){
     
     shopContainerEl.append(renderTopRow());
 
-    shopContainerEl.append(renderTopRow());
+    shopContainerEl.append(renderSpinner());
 
     //shopContainerEl.append()
 
     document.addEventListener('productsLoaded', (e) => {
+        //remove spinner
         shopContainerEl.append(renderProductList());
     })
     

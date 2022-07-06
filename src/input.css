@@ -178,7 +178,7 @@ footer{
   position: relative;
   text-align: center;
   height: 900px;
-  background-image: url("/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
+  background-image: url("./assets/img/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   filter: hue-rotate(220deg) brightness(20%);
@@ -207,7 +207,7 @@ footer{
 /*Css of the form and it's inputs*/
 
 #contact-form{
-  background-image: url(/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
+  background-image: url(./assets/img/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
   background-size: 100%;
   padding-bottom: 100px;
 }
