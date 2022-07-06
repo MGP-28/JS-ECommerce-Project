@@ -1,4 +1,5 @@
 import { getStoredCoupon, setStoredCoupon } from "../../../store/products"
+import { renderSpinner } from "../../generic/spinner"
 
 export function render(){
     let couponInsertEl = document.createElement('section')
@@ -60,7 +61,8 @@ function couponForm(){
         e.preventDefault()
 
         //changes to elements while searching (locked)
-        couponFormButton.innerHTML = `<i class="fa-solid fa-spinner anim-spinner place-self-center"></i>`
+        couponFormButton.textContent = ''
+        couponFormButton.append(renderSpinner())
         couponFormInput.setAttribute('disabled', '')
 
         const couponCodeInserted = e.target.coupon.value

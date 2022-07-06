@@ -1,3 +1,5 @@
+import { renderPopup } from "../../components/generic/popup"
+
 function render(){
     document.querySelector('#app').innerHTML += `
     <div id="shop"></div>
@@ -5,6 +7,8 @@ function render(){
     <div id="contact" class="hidden"></div>
     <div id="cart" class="hidden"></div>
     `
+
+    //document.querySelector('#app').append(renderPopup(false,'És um nabo'))
 }
 
 export {render as renderAppPages}

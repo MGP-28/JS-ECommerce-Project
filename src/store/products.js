@@ -92,10 +92,11 @@ export async function setStoredCoupon(couponCode){
     const cartView = document.querySelector('#cart')
 
     if(!couponCode) {
+        if(coupon.code) cartView.dispatchEvent(new Event('resetDiscount'))
+        else cartView.dispatchEvent(new Event('couponNotFound'))
         coupon.code = ''
         coupon.discount = ''
         setCoupon(couponCode)
-        cartView.dispatchEvent(new Event('resetDiscount'))
         return
     }
 
@@ -114,4 +115,21 @@ export async function setStoredCoupon(couponCode){
         cartView.dispatchEvent(new CustomEvent('applyDiscount', {detail: {coupon: couponResponse.coupon}}))
     }
 
+}
+
+export function getStoredTotals(){
+    const cartItems = getStoredCartItems()
+    const baseSum = cartItems.reduce((sum, product) => {
+        return sum + (product.price * product.quantity)
+    },0);
+    const discountedTotal = baseSum - (baseSum * (coupon.discount / 100))
+
+    return {subtotal: baseSum, discountedTotal: discountedTotal}
+}
+
+export function resetPurchases(){
+    getStoredCartItems().forEach(element => {
+        removeUnitFromCart(element, true)
+    });
+    setStoredCoupon('')
 }
