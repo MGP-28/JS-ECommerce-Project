@@ -3,32 +3,32 @@ import { updateStoredRating } from "../../../store/products";
 function star(product, position, parent){
 
     const starContainerEl = document.createElement('div')
-    starContainerEl.classList.add('h-10', 'w-10', 'hover:bg-red-500')
+    starContainerEl.classList.add('h-10', 'w-10')
     //events
 
 	parent.addEventListener('paintStars', (e) => {
-		(position <= e.detail.maxPosition)
-			? filledStar(starContainerEl)
-			: hollowStar(starContainerEl)
+        console.log('paint; position => ', e.detail)
+		if (position <= e.detail.maxPosition) filledStar(starContainerEl)
+		else hollowStar(starContainerEl)
 	})
 	
-    starContainerEl.addEventListener('mouseover', () => {
+    starContainerEl.addEventListener('mouseenter', () => {
         console.log('over')
         paintStarsEventDispatcher(position, parent);
     });
 
-    starContainerEl.addEventListener('mouseout', () => {
+    starContainerEl.addEventListener('mouseleave', () => {
         console.log('out')
-        paintStarsEventDispatcher(product.rating);
+        paintStarsEventDispatcher(product.rating, parent);
     });
 
     starContainerEl.addEventListener('click', (e) => {
         console.log('click')
         updateStoredRating(product, position);
-        paintStarsEventDispatcher(product.rating);
+        paintStarsEventDispatcher(product.rating, parent);
     });
 
-    parent.append(starContainerEl)
+    parent.append(starContainerEl) //append to parent
 }
 
 function paintStarsEventDispatcher(positionToBroadcast, parent){
@@ -41,15 +41,11 @@ function paintStarsEventDispatcher(positionToBroadcast, parent){
 }
 
 function filledStar(starContainerEl){
-    starContainerEl.classList.add('bg-yellow-600')
-    starContainerEl.classList.remove('bg-yellow-400')
-    //starContainerEl.innerHTML = `<i class="fa-solid fa-star"></i>`
+    starContainerEl.innerHTML = `<i class="fa-solid fa-star"></i>`
 }
 
 function hollowStar(starContainerEl){
-    starContainerEl.classList.remove('bg-yellow-600')
-    starContainerEl.classList.add('bg-yellow-400')
-    //starContainerEl.innerHTML = `<i class="fa-regular fa-star"></i>`
+    starContainerEl.innerHTML = `<i class="fa-regular fa-star"></i>`
 }
 
 export {star};

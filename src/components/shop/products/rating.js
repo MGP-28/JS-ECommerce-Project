@@ -14,11 +14,8 @@ export function rating(product){
             maxPosition: product.rating
         }
     })
-    ratingEl.dispatchEvent(paintStars)
 
-    ratingEl.addEventListener('click', () => {
-        console.log('click')
-    });
+    ratingEl.dispatchEvent(paintStars)
 
     return ratingEl;
 }
