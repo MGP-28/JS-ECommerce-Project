@@ -1,5 +1,5 @@
 export function getCoupon(){
 
-    return localStorage.getItem("coupon")
+    return JSON.parse(localStorage.getItem("coupon"))
 
 }

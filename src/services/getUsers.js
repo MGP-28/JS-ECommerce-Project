@@ -1,24 +1,15 @@
-async function getUsers() {
+import { getRandomUser } from "./getUser"
 
-    const url = 'https://randomuser.me/api/';
-  
-    try {
-  
-      const data = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(res => res.json())
-      
-      return data
-        
-    } catch (error) {
-  
-      console.log(error, 'Error fetching data');
-  
-    } 
-  }
-  
-  export { getUsers };
+async function getContactUsers(){
+    const contacts = []
+
+    for (let index = 0; index < 2; index++) {
+        const user = await getRandomUser()
+        if(user) contacts.push(user)
+        else return false
+    }
+
+    return contacts
+}
+
+export {getContactUsers}
