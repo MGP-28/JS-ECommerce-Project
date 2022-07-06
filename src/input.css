@@ -120,7 +120,7 @@ footer{
 }
 
 .shop-grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   font-size: 30px;
   text-align: center;
   /* border-radius: 15px; */
@@ -138,7 +138,7 @@ footer{
 }
 
 .card-rating {
-  top: calc(100% - 60px);
+  top: 200px;
   left: 20px;
   
 }
@@ -172,7 +172,7 @@ footer{
 .cardPrice {
   grid-area: price;
   font-family: 'parisienne';
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .cardAddToCart {

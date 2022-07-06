@@ -1,7 +1,7 @@
 import { updateStoredRating } from "../../../store/products";
 
 
-function star(index){
+function star(product, position){
 
     const starEl = document.createElement('i');
 

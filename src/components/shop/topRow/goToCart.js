@@ -1,6 +1,6 @@
 function goToCart(){
     
-    const shopBtn = document.createElement('btn');
+    const shopBtn = document.createElement('button');
 
     shopBtn.classList.add('button', 'border', 'border-black', 'flex', 'items-center');
 
