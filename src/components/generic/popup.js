@@ -3,7 +3,7 @@ export function renderPopup(isConfirmation, message){
     container.classList.add('absolute','w-screen','h-screen','background-half','grid','place-items-center','top-0', 'left-0', 'z-50')
 
     const popup = document.createElement('div')
-    popup.classList.add('background-beige','border-2','rounded','flex','flex-col','justify-between','items-center','w-96','h-96','p-8','gap-8')
+    popup.classList.add('background-beige','border-2','rounded','flex','flex-col','justify-between','items-center','w-80','sm:w-96','h-80','sm:h-96','p-8','gap-8')
     container.append(popup)
 
     

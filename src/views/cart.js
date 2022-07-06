@@ -6,8 +6,8 @@ export function cart(){
     let cartView = document.querySelector('#cart')
     cartView.innerHTML = `
         <div class="w-full flex justify-center">
-            <div class="flex flex-col justify-center w-3/4 my-20">
-                <h1 class="font-parisienne text-5xl font-extrabold pl-5 mb-5">Current shopping cart</h1>
+            <div class="flex flex-col justify-center w-full sm:w-3/4 my-10 sm:my-20">
+                <h1 class="font-parisienne text-5xl font-extrabold sm:pl-5 text-center sm:text-left mb-5">Current shopping cart</h1>
                 <div id="cart-empty-message" class="hidden mt-16 text-xl font-semibold text-center">You have no items in cart!</div>
                 <div id="cart-list-grid" class="w-full grid gap-10">
                     <i class="fa-solid fa-spinner anim-spinner place-self-center h-16"></i>
