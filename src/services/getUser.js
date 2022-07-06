@@ -1,7 +1,10 @@
 async function getRandomUser() {
 
+  const retries = 5
+
+  while(retries > 0){
     const url = 'https://randomuser.me/api/';
-  
+
     try {
   
       const data = await fetch(url, {
@@ -11,6 +14,8 @@ async function getRandomUser() {
         },
       })
       .then(res => res.json())
+
+      console.log(data)
       
       return data
         
@@ -19,6 +24,7 @@ async function getRandomUser() {
       console.log(error, 'Error fetching data');
   
     } 
-  }
+  }  
+}
   
   export { getRandomUser };
