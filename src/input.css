@@ -122,22 +122,6 @@ footer{
     width: 300px;
   }
 
-  #contact-name{
-    width: 200px;
-  }
-
-  #contact-email{
-    width: 200px;
-  }
-
-  #contact-message{
-    width: 200px;
-  }
-
-  #contact-submit{
-    width: 200px;
-  }
-
   #contact-map-span{
     position: absolute;
   }

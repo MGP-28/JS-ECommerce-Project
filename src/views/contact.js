@@ -14,9 +14,9 @@ export function contact(){
           </h1>
           <div class="grid md:grid-cols-2" id="contact-form-data">
             <div class="grid" id="contact-form-input">
-              <input type="name" id="contact-name" placeholder="First Name" required>
-              <input type="email" id="contact-email" placeholder="Email" required>
-              <input type="text" id="contact-message" placeholder="Write your message here..." required>
+              <input type="name" id="contact-name" name="name" placeholder="First Name" required class="contact-input">
+              <input type="email" id="contact-email" name="email" placeholder="Email" required class="contact-input">
+              <input type="text" id="contact-message" name="message" placeholder="Write your message here..." required class="contact-input">
               <button type="submit" id="contact-submit">Add to cart</button>
             </div>
             <div class="contact-map">
