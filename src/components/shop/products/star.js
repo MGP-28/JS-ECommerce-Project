@@ -1,59 +1,55 @@
 import { updateStoredRating } from "../../../store/products";
 
+function star(product, position, parent){
 
-function star(product, position){
-
-    const starEl = document.createElement('i');
-
-    starEl.classList.add('fa-star', 'fa-solid');   // Remover fa-solid
-
-
-
+    const starContainerEl = document.createElement('div')
+    starContainerEl.classList.add('h-10', 'w-10', 'hover:bg-red-500')
     //events
 
-// 	rating > paintStars {
-// 		(position <= detail.maxPosition)
-// 			? fillStar(star)
-// 			: hollowStar(star)
-// 	}
+	parent.addEventListener('paintStars', (e) => {
+		(position <= e.detail.maxPosition)
+			? filledStar(starContainerEl)
+			: hollowStar(starContainerEl)
+	})
 	
-    starEl.addEventListener('mouseover', () => {
-        paintStarsEventDispatcher(position);
+    starContainerEl.addEventListener('mouseover', () => {
+        console.log('over')
+        paintStarsEventDispatcher(position, parent);
     });
 
-    starEl.addEventListener('mouseout', () => {
+    starContainerEl.addEventListener('mouseout', () => {
+        console.log('out')
         paintStarsEventDispatcher(product.rating);
     });
 
-    starEl.addEventListener('click', () => {
+    starContainerEl.addEventListener('click', (e) => {
+        console.log('click')
         updateStoredRating(product, position);
         paintStarsEventDispatcher(product.rating);
     });
 
+    parent.append(starContainerEl)
+}
 
-    //Functions
+function paintStarsEventDispatcher(positionToBroadcast, parent){
+    const positionToBroadcastEvent = new CustomEvent('paintStars', {
+        detail: {
+            maxPosition: positionToBroadcast
+        }
+    })
+    parent.dispatchEvent(positionToBroadcastEvent);
+}
 
-    // paintStarsEventDispatcher(positionToBroadcast){
-	// 	positionToBroadcast = new CustomEvent('paintStars', {
-	// 		detail: {
-	// 			maxPosition: ratingToSend
-	// 		}
-	// 	})
-	// 	rating.dispatchEvent(positionToBroadcast);
-	// }
+function filledStar(starContainerEl){
+    starContainerEl.classList.add('bg-yellow-600')
+    starContainerEl.classList.remove('bg-yellow-400')
+    //starContainerEl.innerHTML = `<i class="fa-solid fa-star"></i>`
+}
 
-	// fillStar(star){
-	// 	star.classList.add('fa-solid')
-	// 	star.classList.remove('fa-regular')
-	// }
-	
-	// fillStar(star){
-	// 	star.classList.add('fa-regular')
-	// 	star.classList.remove('fa-solid')
-	// }
-
-    return starEl;
-
+function hollowStar(starContainerEl){
+    starContainerEl.classList.remove('bg-yellow-600')
+    starContainerEl.classList.add('bg-yellow-400')
+    //starContainerEl.innerHTML = `<i class="fa-regular fa-star"></i>`
 }
 
 export {star};
