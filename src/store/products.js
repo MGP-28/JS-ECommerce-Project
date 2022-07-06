@@ -92,10 +92,11 @@ export async function setStoredCoupon(couponCode){
     const cartView = document.querySelector('#cart')
 
     if(!couponCode) {
+        if(coupon.code) cartView.dispatchEvent(new Event('resetDiscount'))
+        else cartView.dispatchEvent(new Event('couponNotFound'))
         coupon.code = ''
         coupon.discount = ''
         setCoupon(couponCode)
-        cartView.dispatchEvent(new Event('resetDiscount'))
         return
     }
 
