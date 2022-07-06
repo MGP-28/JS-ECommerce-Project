@@ -9,6 +9,8 @@ async function getContactUsers(){
         else return false
     }
 
+    console.log('contacts loaded')
+
     return contacts
 }
 

@@ -14,7 +14,17 @@ async function getRandomUser() {
         },
       })
       .then(res => res.json())
-      
+      .then(data => {
+
+        const name = data.results.name.first + '' + data.results.name.last
+        const image = data.results.picture.thumbnail
+  
+        console.log(name)
+        console.log(image)
+
+        return {name: name, image: image}
+      })
+
       return data
         
     } catch (error) {
