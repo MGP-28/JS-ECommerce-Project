@@ -16,5 +16,5 @@ export async function load(){
     
     await (productsAPI) 
         ? addProducts(productsAPI) //send received products into Store
-        : console.log('error loading products') //error message in case of load failure
+        : document.querySelector('#app')//.append(renderPopup(false, 'Error loading products, please refresh the page!'))
 }

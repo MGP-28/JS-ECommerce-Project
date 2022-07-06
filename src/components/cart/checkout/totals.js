@@ -1,4 +1,6 @@
+import { sendPurchase } from "../../../services/sendPurchase"
 import { getStoredCartItems, getStoredDiscount } from "../../../store/products"
+import { renderSpinner } from "../../generic/spinner"
 
 export function render(){
     let checkoutTotalsEl = document.createElement('section')
@@ -73,11 +75,34 @@ function purchaseButton(){
     const confirmPurchaseEl = document.createElement('button')
     confirmPurchaseEl.classList.add('border', 'border-black', 'background-beige', 'shadow', 'font-parisienne', 'hover:border-orange-300', 'hover:border-2', 'hover:shadow-md', 'h-12', 'text-2xl', 'my-3', 'w-full')
     confirmPurchaseEl.textContent = 'Make Purchase'
+    let isActive = false
     confirmPurchaseEl.addEventListener('click', (e) => {
-        //API stuff
+        if(!isActive){
+            isActive = true
+            buttonWaiting(confirmPurchaseEl)
+            sendPurchase()
+        }
+    })
+    document.addEventListener('purchaseSuccessful', (e) => {
+        isActive = false
+        buttonReady(confirmPurchaseEl)
+    })
+    document.addEventListener('purchaseFailed', (e) => {
+        isActive = false
+        buttonReady(confirmPurchaseEl)
     })
 
     return confirmPurchaseEl
+}
+
+function buttonWaiting(confirmPurchaseEl){
+    confirmPurchaseEl.textContent = ''
+    confirmPurchaseEl.append(renderSpinner())
+}
+
+function buttonReady(confirmPurchaseEl){
+    confirmPurchaseEl.textContent = ''
+    confirmPurchaseEl.textContent = 'Make Purchase'
 }
 
 function getTotals(){

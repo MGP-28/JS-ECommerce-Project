@@ -19,7 +19,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app {
+  background-color: var(--color-beige);
+}
+
 /* Global */
+
+.input {
+  background-color: var(--color-beige);
+  
+}
 
 .text-color-custom-beige{
   color: var(--color-beige);
@@ -95,17 +104,227 @@ footer{
   footer{
     height: 100px;
   }
+  nav{
+    grid-template-columns: 0 1fr 0;
 
+  }
 }
 
-#app {
+/*Css of the mobile version of the contact page*/
+
+@media screen and (max-width: 767px) {
+
+  #contact-map-iframe{
+    height: 300px;
+    width: 300px;
+  }
+
+  #contact-name{
+    width: 200px;
+  }
+
+  #contact-email{
+    width: 200px;
+  }
+
+  #contact-message{
+    width: 200px;
+  }
+
+  #contact-submit{
+    width: 200px;
+  }
+
+  #contact-map-span{
+    position: absolute;
+  }
+
+  #contact-form{
+    height: 998px;
+  }
+
+  #contact-user-img{
+    position: relative;
+    right: 24%;
+  }
+
+  #contact-userName{
+    text-align: left;
+    margin-left: 120px ;
+  }
+
+  #contact-userWork{
+    text-align: left;
+    margin-left: 120px ;
+  }
+
+  #contact-userDescription{
+    position: absolute;
+    right: 40px;
+  }
+
+  #contact-userButton{
+    position: relative;
+    top: 35%;
+    right: 23%;
+  }
+}
+
+/*-----------------------------------------------------------------------*/
+
+/*Css of the introduction of the page*/
+
+#contact-introduction{
+  position: relative;
+  text-align: center;
+  height: 900px;
+  background-image: url("/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  filter: hue-rotate(220deg) brightness(20%);
+}
+
+#contact-initialText{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 700px;
+  font-family: Parisienne;
+}
+
+#introduction-span{
+  font-size:50px;
+  color: var(--color-tan);
+}
+
+#introduction-p{
+  font-size:60px;
+  color: var(--color-orange);
+}
+
+/*-----------------------------------------------------------------------*/
+
+/*Css of the form and it's inputs*/
+
+#contact-form{
+  background-image: url(/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
+  background-size: 100%;
+  padding-bottom: 100px;
+}
+
+#contact-us{
+  text-align: center;
+  font-size: 40px;
+  padding: 40px;
+  font-family: Parisienne;
+}
+
+#contact-name{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin-top: 20px;
+  margin-left: 100px;
+  padding-left: 10px;
+}
+
+#contact-email{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin-top: 20px;
+  margin-left: 100px;
+  padding-left: 10px;
+}
+
+#contact-message{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin-top: 20px;
+  margin-left: 100px;
+  padding-bottom: 200px;
+  padding-left: 10px;
+}
+
+#contact-submit{
+  background-color: var(--color-beige);
+  border: solid var(--color-black);
+  margin-top: 20px;
+  margin-right: 520px;
+  margin-left: 100px;
+  font-family: Parisienne;
+}
+
+.contact-map{
+  margin-bottom: -50px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#contact-map-span{
+  padding: 40px;
+  margin: 20px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/*Css of the information about the team*/
+
+#contact-team{
   background-color: var(--color-beige);
 }
 
-.input {
-  background-color: var(--color-beige);
-  
+#contact-team-span{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  font-family: Parisienne;
+  font-weight: bold;
 }
+
+#contact-userData{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-user-img{
+  margin-left: 40%;
+  height: 110px;
+  width: 150px;
+  border-radius: 50px;
+}
+
+#contact-userName{
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Parisienne;
+}
+
+#contact-userWork{
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: darkgray;
+}
+
+#contact-userDescription{
+  margin-left: 30%;
+  font-size: 14px;
+  color: darkgray;
+  width: 300px;
+}
+
+#contact-userButton{
+  margin-top: 15px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 200px;
+  padding: 10px;
+  border: solid var(--color-black);
+  font-family: Parisienne;
+}
+
+/*-----------------------------------------------------------------------*/
 
 #shop-goToCart {
   width: 190px;
@@ -196,21 +415,6 @@ footer{
 
 
 
-}
-
-
-/* #endregion PageShopDesktop */
-
-/* #region PageShopMobile */
-
-/* #endregion PageShopMobile */
-/* #endregion PageShop */
-
-@media screen and (max-width: 768px) {
-  nav{
-    grid-template-columns: 0 1fr 0;
-
-  }
 }
 
 /* About */
