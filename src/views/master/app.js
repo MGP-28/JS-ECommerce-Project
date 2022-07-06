@@ -7,8 +7,6 @@ function render(){
     <div id="contact" class="hidden"></div>
     <div id="cart" class="hidden"></div>
     `
-
-    //document.querySelector('#app').append(renderPopup(false,'És um nabo'))
 }
 
 export {render as renderAppPages}

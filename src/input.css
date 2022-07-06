@@ -113,52 +113,6 @@ footer{
   }
 }
 
-/*Css of the mobile version of the contact page*/
-
-@media screen and (max-width: 767px) {
-
-  #contact-map-iframe{
-    height: 300px;
-    width: 300px;
-  }
-
-  #contact-map-span{
-    position: absolute;
-  }
-
-  #contact-form{
-    height: 998px;
-  }
-
-  #contact-user-img{
-    position: relative;
-    right: 24%;
-  }
-
-  #contact-userName{
-    text-align: left;
-    margin-left: 120px ;
-  }
-
-  #contact-userWork{
-    text-align: left;
-    margin-left: 120px ;
-  }
-
-  #contact-userDescription{
-    position: absolute;
-    right: 40px;
-  }
-
-  #contact-userButton{
-    position: relative;
-    top: 35%;
-    right: 23%;
-  }
-}
-
-/*-----------------------------------------------------------------------*/
-
 /*Css of the introduction of the page*/
 
 #contact-introduction{
@@ -167,7 +121,7 @@ footer{
   height: 900px;
   background-image: url("./assets/img/hugo-delauney-bGq3GmGD-Rs-unsplash.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   filter: hue-rotate(220deg) brightness(20%);
 }
 
@@ -195,8 +149,10 @@ footer{
 
 #contact-form{
   background-image: url(./assets/img/thorn-yang-hjrpVUfL8V8-unsplash.jpg);
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 100px;
+  filter: hue-rotate(350deg);
 }
 
 #contact-us{
@@ -209,24 +165,18 @@ footer{
 #contact-name{
   background-color: var(--color-beige);
   border: solid var(--color-black);
-  margin-top: 20px;
-  margin-left: 100px;
   padding-left: 10px;
 }
 
 #contact-email{
   background-color: var(--color-beige);
   border: solid var(--color-black);
-  margin-top: 20px;
-  margin-left: 100px;
   padding-left: 10px;
 }
 
 #contact-message{
   background-color: var(--color-beige);
   border: solid var(--color-black);
-  margin-top: 20px;
-  margin-left: 100px;
   padding-bottom: 200px;
   padding-left: 10px;
 }
@@ -234,21 +184,7 @@ footer{
 #contact-submit{
   background-color: var(--color-beige);
   border: solid var(--color-black);
-  margin-top: 20px;
-  margin-right: 520px;
-  margin-left: 100px;
   font-family: Parisienne;
-}
-
-.contact-map{
-  margin-bottom: -50px;
-  margin-left: 50px;
-  margin-top: 20px;
-}
-
-#contact-map-span{
-  padding: 40px;
-  margin: 20px;
 }
 
 /*-----------------------------------------------------------------------*/
@@ -262,53 +198,69 @@ footer{
 #contact-team-span{
   text-align: center;
   font-size: 50px;
-  padding-top: 80px;
   padding-bottom: 60px;
   font-family: Parisienne;
   font-weight: bold;
 }
 
-#contact-userData{
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 #contact-user-img{
-  margin-left: 40%;
   height: 110px;
   width: 150px;
   border-radius: 50px;
 }
 
 #contact-userName{
-  margin-top: 20px;
   font-size: 20px;
   font-family: Parisienne;
 }
 
 #contact-userWork{
-  margin-top: 5px;
-  margin-bottom: 15px;
   font-size: 14px;
   color: darkgray;
 }
 
 #contact-userDescription{
-  margin-left: 30%;
   font-size: 14px;
   color: darkgray;
   width: 300px;
 }
 
 #contact-userButton{
-  margin-top: 15px;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 200px;
   padding: 10px;
   border: solid var(--color-black);
   font-family: Parisienne;
+}
+
+/*-----------------------------------------------------------------------*/
+
+/*Css of the mobile version of the contact page*/
+
+@media screen and (max-width: 767px) {
+
+  #contact-introduction{
+    height: 500px;
+  }
+
+  #contact-initialText{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 25%;
+    font-family: Parisienne;
+  }
+
+  #contact-map-iframe{
+    height: 300px;
+    width: 300px;
+  }
+
+  #contact-form{
+    height: 1020px;
+  }
+
+  #contact-form-input{
+    width: 300px;
+  }
 }
 
 /*-----------------------------------------------------------------------*/

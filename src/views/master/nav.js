@@ -17,10 +17,6 @@ function render(){
               <i class="w-8 h-8 fa-brands fa-whatsapp text-color-custom-beige"></i>
               <span class="hidden lg:block">Contact</span>
             </a>
-            <a relatedView="cart" class="link-hover-anim flex gap-2 items-center">
-              <i class="w-8 h-8 fa-solid fa-ban text-color-custom-beige"></i>
-              <span class="hidden lg:block">TEST: cart</span>
-            </a>
           </li>
         </ul>
         <!-- Brand name -->

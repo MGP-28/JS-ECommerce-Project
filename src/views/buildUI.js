@@ -14,7 +14,5 @@ export function buildUI(){
     shop()
     about()
     contact()
-    cart()
-
-    
+    cart()    
 }
