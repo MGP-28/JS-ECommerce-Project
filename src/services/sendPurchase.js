@@ -47,8 +47,9 @@ async function sendData(json){
                     'Content-Type': 'application/json'
                 }, 
                 body: json
-            }).then(() => {
-                retries = -1
+            }).then((response) => {
+                if(response.status === 201) retries = -1
+                else retries = 0
             });
         }catch(error){
             retries--

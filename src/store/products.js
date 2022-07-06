@@ -9,8 +9,6 @@ let cartItemsIds = []
 
 let coupon = getCoupon()
 
-let contacts = []
-
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
         addProduct(element)
