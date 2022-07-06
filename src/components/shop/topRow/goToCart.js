@@ -10,6 +10,19 @@ function goToCart(){
 
 
 
+    // shopBtn.addEventListener('click',(e) => {
+    //     e = new CustomEvent('changeView', { 
+    //         detail: { 
+    //             view:'cart'
+    //         } 
+    //     });
+
+    //     document.dispatchEvent(e);
+
+    // });
+
+
+
     //changes
     return shopBtn; 
 }

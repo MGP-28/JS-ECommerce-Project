@@ -43,6 +43,19 @@ function renderProductCard () {
     `
     productCardEl.querySelector('div.product-card-text').append(addToCart());
 
+    const shop = document.querySelector('#shop')
+
+    shop.addEventListener('search', (e) => {
+      const searchTerm = e.detail.searchTerm
+
+      if (product.title.toLowerCase().includes(searchTerm)) productCardEl.classList.remove('hidden')
+      else productCardEl.classList.add('hidden')
+    })
+
+    shop.addEventListener('resetSearch', (e) => {
+      productCardEl.classList.remove('hidden')
+    })
+
     return productCardContainerEl;
 }
 

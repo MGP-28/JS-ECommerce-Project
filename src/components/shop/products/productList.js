@@ -17,7 +17,6 @@ function renderProductList() {
 
     productListContainerEl.append(productListEl);
 
-    
 
     return productListContainerEl;
 }
