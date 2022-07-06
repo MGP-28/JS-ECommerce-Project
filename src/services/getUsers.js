@@ -3,12 +3,10 @@ import { getRandomUser } from "./getUser"
 async function getContactUsers(){
     const contacts = []
 
-    try{
-        for (let index = 0; index < 2; index++) {
-            contacts.push(await getRandomUser())
-        }
-    }catch(error){
-        return false
+    for (let index = 0; index < 2; index++) {
+        const user = await getRandomUser()
+        if(user) contacts.push(user)
+        else return false
     }
 
     return contacts
