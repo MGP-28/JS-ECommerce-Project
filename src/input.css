@@ -149,18 +149,34 @@ footer{
 /* contact hero animation */
 
 @keyframes anim-hero-out{
-  0%{left:50%}
-  90%{left:-150px} 
-  100%{left:-150px} 
+  0%{
+    left:50%;
+  }
+  50%{
+    opacity: 0%;
+  }
+  100%{
+    left:-150px;
+    opacity: 0%; 
+  } 
 }
 .anim-hero-out{
   animation: anim-hero-out 2s;
-  animation-timing-function:ease-in;
+  animation-timing-function: ease-in;
 }
 
 @keyframes anim-hero-in{
-  from{left:calc(100% + 120px)}
-  to{left:50%} 
+  0%{
+    left:calc(100%); 
+    opacity: 0%;
+  }
+  50%{
+    opacity: 0%;
+  }
+  100%{
+    left:50%; 
+    opacity: 100%;
+  } 
 }
 .anim-hero-in{
   animation: anim-hero-in 2s;
@@ -203,7 +219,7 @@ footer{
   border: solid var(--color-black);
   min-height: 240px;
   max-height: 240px;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 #contact-submit{

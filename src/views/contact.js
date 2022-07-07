@@ -53,6 +53,20 @@ export async function contact(){
     const submitBtn = formEl.querySelector('button')
     submitBtn.setAttribute('disabled', '')
     submitBtn.innerHTML = ''; submitBtn.append(renderSpinner())
+    //form data validations
+    if(!e.target.name.value) {
+      contactFormValidationError('Error: Name is empty.', submitBtn); return
+    }
+    if(!e.target.email.value) {
+      contactFormValidationError('Error: Email is empty.', submitBtn); return
+    }
+    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+    if(!e.target.email.value.match(emailPattern)) {
+      contactFormValidationError('Error: Email format is incorrect.', submitBtn); return
+    }
+    if(!e.target.message.value) {
+      contactFormValidationError('Error: Message is empty.', submitBtn); return
+    }
     //organize data into object
     const contactInfo = {
       name: e.target.name.value,
@@ -72,8 +86,7 @@ export async function contact(){
 
       else renderPopup(false, 'Error sending the message, please try again later.')
 
-      submitBtn.removeAttribute('disabled')
-      submitBtn.textContent = 'Contact Me!'
+      contactMeReset(submitBtn)
     })
   })
 
@@ -86,7 +99,7 @@ export async function contact(){
 
 // function that will loop animation
 function animationLoop(heroDivs, index) {
-  // do the animation in and out every 7 seconds, text enter and text out and hide
+  // do the animation in and out every 2.5 seconds, text enter and text out and hide
   setTimeout(() => {
     const nextDivIndex = (index == heroDivs.length - 1) ? 0 : index + 1
     heroDivs[index].classList.add('anim-hero-out')
@@ -104,5 +117,15 @@ function animationLoop(heroDivs, index) {
           animationLoop(heroDivs, nextDivIndex)
         }, 0);
     }, 1950);
-  },7000)
+  },2500)
+}
+
+function contactFormValidationError(message, submitBtn){
+  renderPopup(false, message); 
+  contactMeReset(submitBtn)
+}
+
+function contactMeReset(submitBtn){
+  submitBtn.removeAttribute('disabled')
+  submitBtn.textContent = 'Contact Me!'
 }
