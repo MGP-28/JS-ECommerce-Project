@@ -54,11 +54,19 @@ export async function contact(){
     submitBtn.setAttribute('disabled', '')
     submitBtn.innerHTML = ''; submitBtn.append(renderSpinner())
     //form data validations
-    if(!e.target.name.value) {renderPopup(false, 'Error: Name is empty.'); contactMeReset(submitBtn); return}
-    if(!e.target.email.value) {renderPopup(false, 'Error: Email is empty.');contactMeReset(submitBtn); return}
+    if(!e.target.name.value) {
+      contactFormValidationError('Error: Name is empty.', submitBtn); return
+    }
+    if(!e.target.email.value) {
+      contactFormValidationError('Error: Email is empty.', submitBtn); return
+    }
     const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
-    if(!e.target.email.value.match(emailPattern)) {renderPopup(false, 'Error: Email format is incorrect.');contactMeReset(submitBtn); return}
-    if(!e.target.message.value) {renderPopup(false, 'Error: Message is empty.');contactMeReset(submitBtn); return}
+    if(!e.target.email.value.match(emailPattern)) {
+      contactFormValidationError('Error: Email format is incorrect.', submitBtn); return
+    }
+    if(!e.target.message.value) {
+      contactFormValidationError('Error: Message is empty.', submitBtn); return
+    }
     //organize data into object
     const contactInfo = {
       name: e.target.name.value,
@@ -112,8 +120,9 @@ function animationLoop(heroDivs, index) {
   },2500)
 }
 
-function contactFormValidationError(message){
-
+function contactFormValidationError(message, submitBtn){
+  renderPopup(false, message); 
+  contactMeReset(submitBtn)
 }
 
 function contactMeReset(submitBtn){
