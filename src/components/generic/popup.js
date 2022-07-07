@@ -24,5 +24,5 @@ export function renderPopup(isConfirmation, message){
     })
     popup.append(button)
     
-    document.querySelector('#app').append(popup)
+    document.querySelector('#app').append(container)
 }
