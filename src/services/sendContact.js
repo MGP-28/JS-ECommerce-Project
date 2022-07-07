@@ -2,8 +2,7 @@ async function sendContact(formContact){
     const contactJSON = buildJSON(formContact)
 
     const response = await sendData(contactJSON)
-    if(response) document.dispatchEvent(new Event('contactSuccessful'))
-    else document.dispatchEvent(new Event('contactFailed'))
+    return response
 }
 
 function buildJSON(formContact){

@@ -177,8 +177,9 @@ footer{
 #contact-message{
   background-color: var(--color-beige);
   border: solid var(--color-black);
-  padding-bottom: 200px;
-  padding-left: 10px;
+  min-height: 240px;
+  max-height: 240px;
+  padding: 0 10px;
 }
 
 #contact-submit{
@@ -253,7 +254,7 @@ footer{
   }
 
   #contact-form{
-    height: 1020px;
+    height: 1100px;
   }
 
   #contact-form-input{
