@@ -53,6 +53,12 @@ export async function contact(){
     const submitBtn = formEl.querySelector('button')
     submitBtn.setAttribute('disabled', '')
     submitBtn.innerHTML = ''; submitBtn.append(renderSpinner())
+    //form data validations
+    if(!e.target.name.value) {renderPopup(false, 'Error: Name is empty.'); contactMeReset(submitBtn); return}
+    if(!e.target.email.value) {renderPopup(false, 'Error: Email is empty.');contactMeReset(submitBtn); return}
+    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+    if(!e.target.email.value.match(emailPattern)) {renderPopup(false, 'Error: Email format is incorrect.');contactMeReset(submitBtn); return}
+    if(!e.target.message.value) {renderPopup(false, 'Error: Message is empty.');contactMeReset(submitBtn); return}
     //organize data into object
     const contactInfo = {
       name: e.target.name.value,
@@ -72,8 +78,7 @@ export async function contact(){
 
       else renderPopup(false, 'Error sending the message, please try again later.')
 
-      submitBtn.removeAttribute('disabled')
-      submitBtn.textContent = 'Contact Me!'
+      contactMeReset(submitBtn)
     })
   })
 
@@ -105,4 +110,13 @@ function animationLoop(heroDivs, index) {
         }, 0);
     }, 1950);
   },7000)
+}
+
+function contactFormValidationError(message){
+
+}
+
+function contactMeReset(submitBtn){
+  submitBtn.removeAttribute('disabled')
+  submitBtn.textContent = 'Contact Me!'
 }
