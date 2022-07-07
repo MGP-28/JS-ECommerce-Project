@@ -1,5 +1,3 @@
-import { renderPopup } from "../../components/generic/popup"
-
 function render(){
     document.querySelector('#app').innerHTML += `
     <div id="shop"></div>

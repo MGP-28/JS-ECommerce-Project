@@ -1,5 +1,7 @@
 import { TeamMember } from "../model/teamMember";
 
+//unused
+
 async function getTeamMembers() {
 
     const membersGithubIds = ['MGP-28', 'MHPM1980', 'PedroTeixeira00', 'sshrimpman']

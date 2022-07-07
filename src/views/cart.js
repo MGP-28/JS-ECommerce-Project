@@ -20,25 +20,24 @@ export function cart(){
 }
 
 function eventListeners(cartView, pageContainerEl){
-    const app = document.querySelector('#app')
     cartView.addEventListener('couponError', (e) => {
         //popup(error, 'Error connecting')
-        app.append(renderPopup(false,'Error connecting'))
+        renderPopup(false,'Error connecting')
     })
 
     cartView.addEventListener('couponNotFound', (e) => {
         //popup(error, 'Coupon not valid')
-        app.append(renderPopup(false,'Coupon not valid'))
+        renderPopup(false,'Coupon not valid')
     })
 
     cartView.addEventListener('applyDiscount', (e) => {
         //popup(success, 'Coupon applied')
-        app.append(renderPopup(true,'Coupon applied'))
+        renderPopup(true,'Coupon applied')
     })
 
     cartView.addEventListener('resetDiscount', (e) => {
         //popup(success, 'Coupon removed')
-        app.append(renderPopup(true,'Coupon removed'))
+        renderPopup(true,'Coupon removed')
     })
 
     document.addEventListener('productsLoaded', (e) => {

@@ -14,7 +14,7 @@ function addToCart(product) {
     const btnEl = btnContainer.querySelector('button')
     btnEl.addEventListener('click', (e) => {
         addUnitToCart(product)
-        document.querySelector('#app').append(renderPopup(true, 'Item added to cart'))
+        renderPopup(true, 'Item added to cart')
     })
 
     return btnContainer;

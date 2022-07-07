@@ -61,10 +61,10 @@ export async function contact(){
         e.target.name.value = '',
         e.target.email.value = '',
         e.target.message.value = ''
-        document.querySelector('#app').append(renderPopup(true, 'Message sent successfully. Thank you for your contact!'))
+        renderPopup(true, 'Message sent successfully. Thank you for your contact!')
       }
 
-      else document.querySelector('#app').append(renderPopup(false, 'Error sending the message, please try again later.'))
+      else renderPopup(false, 'Error sending the message, please try again later.')
 
       submitBtn.removeAttribute('disabled')
       submitBtn.textContent = 'Contact Me!'

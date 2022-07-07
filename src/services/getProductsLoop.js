@@ -1,3 +1,4 @@
+import { renderPopup } from "../components/generic/popup";
 import { getProductsFromAPI } from "./getProducts";
 
 export async function getProducts(){
@@ -17,6 +18,6 @@ export async function getProducts(){
     }
 
     return (retries == 0) 
-        ? console.log('couldnt load products')
+        ? renderPopup(false, 'Error while loading products, please try again')
         : products
 }
