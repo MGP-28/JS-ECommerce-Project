@@ -101,7 +101,7 @@ function animationLoop(heroDivs, index) {
 
         // callback to keep the loop going
         setTimeout(() => {
-          animationLoop(heroDivs, nextDivIndex) 
+          animationLoop(heroDivs, nextDivIndex)
         }, 0);
     }, 1950);
   },7000)
