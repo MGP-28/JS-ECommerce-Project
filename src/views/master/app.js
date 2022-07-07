@@ -1,3 +1,5 @@
+// function to load views into APP
+
 function render(){
     document.querySelector('#app').innerHTML += `
     <div id="shop"></div>

@@ -1,5 +1,7 @@
 import { TeamMember } from "../model/teamMember";
 
+//Team members information   
+
 let teamMembers = [
     new TeamMember('João Pereira', 'https://avatars.githubusercontent.com/u/94644053?v=4', 'https://github.com/MGP-28'),
     new TeamMember('Márcio Miguel', 'https://avatars.githubusercontent.com/u/94644101?v=4', 'https://github.com/MHPM1980'),

@@ -8,7 +8,8 @@ export function rating(product){
     for (let position = 1; position <= 5; position++) {
         star(product, position, ratingEl);
     }
-
+    
+    // render the correct color in each star for the FIRST TIME
     const paintStars = new CustomEvent('paintStars', {
         detail: {
             maxPosition: product.rating

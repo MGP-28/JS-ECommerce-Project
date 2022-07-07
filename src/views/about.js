@@ -34,6 +34,8 @@ export function about(){
             </aside>
         </div>
     `
+
+    // insert team members by atribute from the team members array
     aboutEl.querySelector('div[teamLeader]').append(renderTeamMemberCard(teamMembers[0]))
     aboutEl.querySelector('div[teamMember]').append(renderTeamMemberCard(teamMembers[1]), renderTeamMemberCard(teamMembers[2]), renderTeamMemberCard(teamMembers[3]))
 }

@@ -1,3 +1,6 @@
+
+//team members class
+
 export class TeamMember{
     constructor(name, image, page) {
         this.name = name

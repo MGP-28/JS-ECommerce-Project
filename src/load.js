@@ -1,3 +1,4 @@
+import { renderPopup } from './components/generic/popup.js'
 import { getProducts } from './services/getProductsLoop.js'
 import { reserveLocalStorage } from './services/json/reserveLocal.js'
 import { addProducts } from './store/products.js'
@@ -9,12 +10,12 @@ export async function load(){
     reserveLocalStorage()
     //build UI
     buildUI()
-    //UI events
+    //UI events - change view
     loadEvents()
     //get products from API
     const productsAPI = await getProducts()
     
     await (productsAPI) 
         ? addProducts(productsAPI) //send received products into Store
-        : document.querySelector('#app')//.append(renderPopup(false, 'Error loading products, please refresh the page!'))
+        : renderPopup(false,"Communication failure, please try again later")
 }

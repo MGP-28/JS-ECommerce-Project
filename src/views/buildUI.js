@@ -5,7 +5,9 @@ import { cart } from "./cart.js";
 import { renderNavBar } from "./master/nav.js";
 import { renderFooter } from "./master/footer.js";
 import { renderAppPages } from "./master/app.js";
-import { renderProductList } from "../components/shop/products/productList.js";
+
+
+// function that loads the ui main components
 
 export function buildUI(){
     renderNavBar()

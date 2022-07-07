@@ -3,6 +3,8 @@ import { getRating } from "../services/json/getRating"
 import { setCartCounter } from "../services/json/setCartCounter"
 import { setRating } from "../services/json/setRating"
 
+// product class properties
+
 export class Product{
     constructor(id, title, description, price, image, rating) {
         this.id = id
@@ -10,8 +12,8 @@ export class Product{
         this.description = description
         this.price = price
         this.image = image
-        this.rating = this.getStoredRating(rating)
-        this.quantity = this.getStoredCartCounter()
+        this.rating = this.getStoredRating(rating) // check localStorage for user defined rating
+        this.quantity = this.getStoredCartCounter() // check LocalStorage user cart quantity
     }
 
     deleteFromCart(){
@@ -40,9 +42,9 @@ export class Product{
         setRating(this.id, rating)
     }
 
-    getStoredRating(rating){
+    getStoredRating(ratingAPI){
         const ratingStored = getRating(this.id)
-        return (ratingStored) ? ratingStored : rating
+        return (ratingStored) ? ratingStored : ratingAPI
     }
 
 }
