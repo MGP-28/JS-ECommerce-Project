@@ -219,7 +219,7 @@ footer{
   border: solid var(--color-black);
   min-height: 240px;
   max-height: 240px;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 #contact-submit{
