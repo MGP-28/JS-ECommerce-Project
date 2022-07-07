@@ -138,9 +138,33 @@ footer{
   color: var(--color-tan);
 }
 
-#introduction-p{
+.introduction-p{
   font-size:60px;
   color: var(--color-orange);
+  left:50%;
+  transform: translateX(-50%);
+  width:100%;
+}
+
+/* contact hero animation */
+
+@keyframes anim-hero-out{
+  0%{left:50%}
+  90%{left:-150px} 
+  100%{left:-150px} 
+}
+.anim-hero-out{
+  animation: anim-hero-out 2s;
+  animation-timing-function:ease-in;
+}
+
+@keyframes anim-hero-in{
+  from{left:calc(100% + 120px)}
+  to{left:50%} 
+}
+.anim-hero-in{
+  animation: anim-hero-in 2s;
+  animation-timing-function: ease-out;
 }
 
 /*-----------------------------------------------------------------------*/

@@ -8,9 +8,11 @@ export async function contact(){
   const contactView = document.querySelector('#contact')
   contactView.innerHTML = `
       <div id="contact-introduction"></div>
-      <div id="contact-initialText">
+      <div id="contact-initialText" class="relative overflow-hidden h-full">
         <span id="introduction-span">Let your essence, flow and lifestyle overflow</span>
-        <p id="introduction-p">Be wise</p>
+        <div class="introduction-p absolute" >Be wise</div>
+        <div class="introduction-p absolute hidden">Be clever</div>
+        <div class="introduction-p absolute hidden">Be ingenious</div>
       </div>
       <div id="contact-form">
         <h1 id="contact-us">
@@ -25,6 +27,10 @@ export async function contact(){
         </h1>
       </div>
   `
+
+  // hero animation function call
+  const heroDivs = [...contactView.querySelectorAll(".introduction-p")]
+  animationLoop(heroDivs, 0)
 
   //get form/map container from the view
   const formSectionEl = contactView.querySelector('#contact-form-data')
@@ -76,4 +82,27 @@ export async function contact(){
   //render team members via API data
   const teamMembersEl = await teamMembers()
   contactTeamEl.append(teamMembersEl)
+}
+
+// function that will loop animation
+function animationLoop(heroDivs, index) {
+  // do the animation in and out every 7 seconds, text enter and text out and hide
+  setTimeout(() => {
+    const nextDivIndex = (index == heroDivs.length - 1) ? 0 : index + 1
+    heroDivs[index].classList.add('anim-hero-out')
+    heroDivs[nextDivIndex].classList.add('anim-hero-in')
+    heroDivs[nextDivIndex].classList.remove('hidden')
+
+    // at the end of the animation (2 seconds), 
+    setTimeout(() => {
+      heroDivs[index].classList.add('hidden')
+      heroDivs[index].classList.remove('anim-hero-out')
+      heroDivs[nextDivIndex].classList.remove('anim-hero-in')
+
+        // callback to keep the loop going
+        setTimeout(() => {
+          animationLoop(heroDivs, nextDivIndex) 
+        }, 0);
+    }, 1950);
+  },7000)
 }
