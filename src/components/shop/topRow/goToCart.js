@@ -4,7 +4,7 @@ function goToCart(){
     
     const shopBtn = document.createElement('button');
 
-    shopBtn.classList.add('button', 'border', 'border-black', 'flex', 'items-center');
+    shopBtn.classList.add('button', 'border', 'border-black', 'flex', 'items-center', 'hover:border-orange-300',  'hover:border-2', 'hover:shadow-md');
 
     shopBtn.setAttribute('id', 'shop-goToCart');
 

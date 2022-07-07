@@ -91,7 +91,7 @@ export async function contact(){
 
 // function that will loop animation
 function animationLoop(heroDivs, index) {
-  // do the animation in and out every 7 seconds, text enter and text out and hide
+  // do the animation in and out every 2.5 seconds, text enter and text out and hide
   setTimeout(() => {
     const nextDivIndex = (index == heroDivs.length - 1) ? 0 : index + 1
     heroDivs[index].classList.add('anim-hero-out')
@@ -109,7 +109,7 @@ function animationLoop(heroDivs, index) {
           animationLoop(heroDivs, nextDivIndex)
         }, 0);
     }, 1950);
-  },7000)
+  },2500)
 }
 
 function contactFormValidationError(message){
