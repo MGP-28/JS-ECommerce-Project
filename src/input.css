@@ -204,9 +204,9 @@ footer{
 }
 
 #contact-user-img{
-  height: 110px;
+  height: 150px;
   width: 150px;
-  border-radius: 50px;
+  border-radius: 100%;
 }
 
 #contact-userName{
@@ -227,8 +227,6 @@ footer{
 
 #contact-userButton{
   padding: 10px;
-  border: solid var(--color-black);
-  font-family: Parisienne;
 }
 
 /*-----------------------------------------------------------------------*/
