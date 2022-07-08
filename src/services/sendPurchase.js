@@ -9,8 +9,10 @@ async function sendPurchase(){
     if(response){
         document.dispatchEvent(new Event('purchaseSuccessful'))
         resetPurchases()
+        return response
     }
-    else document.dispatchEvent(new Event('purchaseFailed'))
+    document.dispatchEvent(new Event('purchaseFailed'))
+    return response
 }
 
 function buildJSON(){
@@ -35,6 +37,8 @@ function buildJSON(){
 
 async function sendData(json){
     let retries = 5
+    let successMessage = ''
+    let isSuccessfull = false
 
     while(retries > 0){
         try{
@@ -47,8 +51,20 @@ async function sendData(json){
                     'Content-Type': 'application/json'
                 }, 
                 body: json
-            }).then((response) => {
-                if(response.status === 201) retries = -1
+            })
+            //check response status code
+            .then(response => {
+                if(response.status === 201) isSuccessfull = true
+                return response
+            })
+            //unpack data from response
+            .then(response => response.json())
+            //check returned message from API
+            .then((data) => {
+                if(isSuccessfull) {
+                    successMessage = data.message;
+                    retries = -1
+                }
                 else retries = 0
             });
         }catch(error){
@@ -58,9 +74,9 @@ async function sendData(json){
         }
     }
 
-    return (retries >= 0) 
-        ? false
-        : true
+    return (successMessage) 
+        ? successMessage
+        : false
 }
 
 export {sendPurchase}

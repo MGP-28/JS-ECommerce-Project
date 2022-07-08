@@ -1,5 +1,6 @@
 import { sendPurchase } from "../../../services/sendPurchase"
 import { getStoredCartItems, getStoredDiscount } from "../../../store/products"
+import { renderPopup } from "../../generic/popup"
 import { renderSpinner } from "../../generic/spinner"
 
 export function render(){
@@ -81,6 +82,10 @@ function purchaseButton(){
             isActive = true
             buttonWaiting(confirmPurchaseEl)
             sendPurchase()
+            .then(response => {
+                if (response) renderPopup(true, response)
+                else renderPopup(false, 'Error: Purchased failed')
+            })
         }
     })
     document.addEventListener('purchaseSuccessful', (e) => {
