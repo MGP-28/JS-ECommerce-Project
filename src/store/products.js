@@ -7,7 +7,8 @@ let products = []
 
 let cartItemsIds = []
 
-let coupon = getCoupon()
+const couponLS = getCoupon()
+let coupon = (couponLS) ? couponLS : {code:"",discount:""}
 
 export function addProducts(arrProductsAPI){
     arrProductsAPI.forEach( element => {
@@ -80,11 +81,12 @@ export function getStoredCartItems(){
 // coupon
 
 export function getStoredCoupon(){
+
     return coupon.code
 }
 
 export function getStoredDiscount(){
-    return coupon.discount
+    return (coupon.discount) ? coupon.discount : 0
 }
 
 export async function setStoredCoupon(couponCode){
