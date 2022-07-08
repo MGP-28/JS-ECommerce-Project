@@ -77,6 +77,10 @@ li{
   list-style: none;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 .link-hover-anim{
   transition: 0.5s;
 }
