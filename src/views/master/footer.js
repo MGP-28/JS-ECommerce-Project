@@ -8,16 +8,16 @@ function render(){
       <span class="text-sm sm:text-center">© 2022 DekiDeki™. All Rights Reserved.</span>
       <ul class="grid grid-cols-2 text-sm gap-1 md:gap-5 md:flex md:flex-wrap md:items-center ">
           <li>
-              <h1>${teamMembers[0].name}</h1>
+              <h1><a href="${teamMembers[0].page}">${teamMembers[0].name}</a></h1>
           </li>
           <li>
-              <h1>${teamMembers[1].name}</h1>
+              <h1><a href="${teamMembers[1].page}">${teamMembers[1].name}</a></h1>
           </li>
           <li>
-              <h1>${teamMembers[2].name}</h1>
+              <h1><a href="${teamMembers[2].page}">${teamMembers[2].name}</a></h1>
           </li>
           <li>
-              <h1>${teamMembers[3].name}</h1>
+              <h1><a href="${teamMembers[3].page}">${teamMembers[3].name}</a></h1>
           </li>
       </ul>
     </footer>
